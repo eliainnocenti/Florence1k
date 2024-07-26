@@ -16,7 +16,7 @@ Florence 1k aims to facilitate research and development in computer vision appli
 
 <!-- TODO: update -->
 
-- Actual number of images: `0400`
+- Actual number of images: `1200`
 - Number of monuments: `12`
 
 ### Monument Classes
@@ -69,3 +69,5 @@ dataset/
 <!-- TODO: update -->
 
 ### Augmentation
+
+<!-- TODO: update -->

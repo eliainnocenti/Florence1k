@@ -9,7 +9,7 @@ import logging
 from PIL import Image
 
 # Handling DecompressionBombWarning
-Image.MAX_IMAGE_PIXELS = 150000000
+Image.MAX_IMAGE_PIXELS = 200000000 # TODO: check
 
 
 def is_jpg(filename):
@@ -79,6 +79,9 @@ def rename_images(monument_path, monument, monument_number):
     # Get the list of files in the directory
     images = os.listdir(monument_path)
 
+    # Remove hidden files
+    images = [img for img in images if not img.startswith('.')]
+
     # Sort the files to ensure consistent naming
     images.sort()
 
@@ -110,6 +113,7 @@ def rename_images(monument_path, monument, monument_number):
             continue
 
         os.rename(old_path, new_path)
+    '''
 
     # Iterate over all files in the directory
     for image in images:
@@ -131,7 +135,7 @@ def rename_images(monument_path, monument, monument_number):
 
             # Increment the counter
             count += 1
-    '''
+
 
     print(f"Completed renaming. Processed {count - 1} images in '{monument_path}'.")
     logging.info(f"Completed renaming. Processed {count - 1} images in '{monument_path}'.")

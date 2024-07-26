@@ -4,6 +4,7 @@ TODO: add descriptions
 
 import cv2
 import matplotlib.pyplot as plt
+import numpy as np
 import os
 
 
@@ -26,7 +27,7 @@ def plot_images(img):
     plt.show()
 
 
-def blur_face(image_path):
+def blur_face(image): # TODO: image_path or image?
     """
     Function to blur faces in an image using OpenCV.
 
@@ -36,9 +37,10 @@ def blur_face(image_path):
     Please review the processed images carefully. Manual intervention may be required
     for images where faces are not adequately detected or blurred.
 
-    :param image_path: path to the image.
+    :param image: image to process.
     :return: image.
     """
+    '''
     try:
         # OpenCV reads images by default in BGR format
         image = cv2.imread(image_path)
@@ -75,3 +77,40 @@ def blur_face(image_path):
         return None
 
     return image
+    '''
+
+    try:
+        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+        # Use both frontal and profile face cascades for better detection
+        face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
+        profile_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_profileface.xml')
+
+        faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5, minSize=(30, 30))
+        profiles = profile_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5, minSize=(30, 30))
+
+        # Combine detected faces and profiles
+        all_faces = np.vstack((faces, profiles)) if len(profiles) > 0 else faces
+
+        for (x, y, w, h) in all_faces:
+            # Increase the detected area slightly
+            x, y = max(0, x - 10), max(0, y - 10)
+            w, h = min(w + 20, image.shape[1] - x), min(h + 20, image.shape[0] - y)
+
+            face_roi = image[y:y+h, x:x+w]
+
+            # Apply a stronger blur
+            blurred_face = cv2.GaussianBlur(face_roi, (33, 33), 30)
+
+            # Blend the blurred face with the original to create a more natural look
+            alpha = 0.8
+            blended_face = cv2.addWeighted(blurred_face, alpha, face_roi, 1-alpha, 0)
+
+            image[y:y+h, x:x+w] = blended_face
+
+        return image
+
+    except Exception as e:
+        #logging.error(f"Error in blur_face: {str(e)}")
+        print(f"Error in blur_face: {str(e)}")
+        return image  # Return original image if blurring fails

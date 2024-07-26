@@ -7,6 +7,7 @@ image renaming, and metadata removal.
 import os
 import cv2
 from tqdm import tqdm
+import numpy as np
 from utils.blur_faces import blur_face
 from utils.rename_images import rename_images
 from utils.rename_images import is_jpg
@@ -25,29 +26,39 @@ def check_image_integrity(processed_image, original_image_path):
     :param original_image_path: Path to the original image for comparison.
     :return: True if the image passes all integrity checks, False otherwise.
     """
-    # Load the original image
-    original_img = cv2.imread(original_image_path)
+    try:
+        # Load the original image
+        original_img = cv2.imread(original_image_path)
 
-    # TODO: check if it can be updated
+        # Check if either image is None
+        if processed_image is None or original_img is None:
+            return False
 
-    # Check if either image is None
-    if processed_image is None or original_img is None:
+        # Check if dimensions match
+        if processed_image.shape != original_img.shape:
+            return False
+
+        # Check image dimensions (height and width should be greater than 0)
+        if processed_image.shape[0] <= 0 or processed_image.shape[1] <= 0:
+            return False
+
+        # Check the number of channels (expecting 3 for BGR/RGB images)
+        if len(processed_image.shape) < 3 or processed_image.shape[2] != 3:
+            return False
+
+        # Check for significant changes in overall image content # TODO: check
+        diff = cv2.absdiff(processed_image, original_img)
+        non_zero_count = np.count_nonzero(diff)
+        if non_zero_count / processed_image.size > 0.5:  # If more than 50% of pixels changed
+            return False
+
+        # If all checks pass, the image is considered valid
+        return True
+
+    except Exception as e:
+        #logging.error(f"Error in check_image_integrity for {original_image_path}: {str(e)}")
+        print(f"Error in check_image_integrity for {original_image_path}: {str(e)}")
         return False
-
-    # Check if dimensions match
-    if processed_image.shape != original_img.shape:
-        return False
-
-    # Check image dimensions (height and width should be greater than 0)
-    if processed_image.shape[0] <= 0 or processed_image.shape[1] <= 0:
-        return False
-
-    # Check the number of channels (expecting 3 for BGR/RGB images)
-    if len(processed_image.shape) < 3 or processed_image.shape[2] != 3:
-        return False
-
-    # If all checks pass, the image is considered valid
-    return True
 
 
 def blur_all_faces(images_path, monuments):
@@ -64,28 +75,48 @@ def blur_all_faces(images_path, monuments):
     :param monuments: Dictionary of monument names with their corresponding numbers.
     :return: None.
     """
-    total_images = sum(len(os.listdir(os.path.join(images_path, f"{num}. {name}"))) for num, name in monuments.items())
-    progress_bar = tqdm(total=total_images, desc="Blurring Faces")
+    #total_images = sum(len(os.listdir(os.path.join(images_path, f"{num}. {name}"))) for num, name in monuments.items())
+    total_images = sum(len([f for f in os.listdir(os.path.join(images_path, f"{num}. {name}"))
+                            if is_jpg(os.path.join(images_path, f"{num}. {name}", f))])
+                       for num, name in monuments.items())
 
-    # TODO: check progress bar
-    # FIXME: implement Error handling
+    with tqdm(total=total_images, desc="Blurring Faces") as progress_bar:
+        for num, monument in monuments.items():
+            monument_path = os.path.join(images_path, f"{num}. {monument}")
 
-    for num, monument in monuments.items():
-        monument_path = os.path.join(images_path, f"{num}. {monument}")
+            for image in os.listdir(monument_path):
+                image_path = os.path.join(monument_path, image)
 
-        for image in os.listdir(monument_path):
-            image_path = os.path.join(monument_path, image)
-            img = blur_face(image_path)
+                if not is_jpg(image_path):
+                    #logging.warning(f"Skipping invalid image: {image_path}")
+                    print(f"Skipping invalid image: {image_path}")
+                    continue
 
-            # Save the image
-            if check_image_integrity(img, images_path):
-                cv2.imwrite(image_path, cv2.cvtColor(img, cv2.COLOR_RGB2BGR)) # If the image already exists, it will be overwritten
-            else:
-                print(f"Error processing image at {image_path}")
+                try:
+                    img = cv2.imread(image_path)
+                    if img is None:
+                        raise ValueError(f"Failed to load image: {image_path}")
 
-            progress_bar.update(1)
+                    blurred_img = blur_face(img)
 
-    progress_bar.close()
+                    if check_image_integrity(blurred_img, image_path):
+                        cv2.imwrite(image_path, blurred_img) # If the image already exists, it will be overwritten
+                        #cv2.imwrite(image_path, cv2.cvtColor(img, cv2.COLOR_RGB2BGR))
+                    else:
+                        print(f"Warning: Integrity check failed for {image_path}. Image not saved.")
+
+                except cv2.error as e:
+                    if "Invalid SOS parameters for sequential JPEG" in str(e):
+                        #logging.warning(f"Invalid JPEG in {image_path}. Skipping.")
+                        print(f"Invalid JPEG in {image_path}. Skipping.")
+                    else:
+                        #logging.error(f"OpenCV error processing image at {image_path}: {str(e)}")
+                        print(f"OpenCV error processing image at {image_path}: {str(e)}")
+                except Exception as e:
+                    #logging.error(f"Error processing image at {image_path}: {str(e)}")
+                    print(f"Error processing image at {image_path}: {str(e)}")
+
+                progress_bar.update(1)
 
 
 def rename_all_images(images_path, monuments):
@@ -121,6 +152,36 @@ def remove_all_metadata():
     pass
 
 
+def check_all_directories(images_path, monuments):
+    """
+    Check if all directories contain only JPEG images.
+
+    :param images_path: Path to the directory containing monument subdirectories.
+    :param monuments: Dictionary of monument names with their corresponding numbers.
+    :return: None.
+    """
+    for num, monument in monuments.items():
+        monument_path = os.path.join(images_path, f"{num}. {monument}")
+        if check_directory(monument_path):
+            print(f'All images in {monument} are JPEG images.')
+        else:
+            print(f'Not all images in {monument} are JPEG images.')
+
+
+def count_images(images_path, monuments):
+    """
+    Count the number of images in each directory.
+
+    :param images_path: Path to the directory containing monument subdirectories.
+    :param monuments: Dictionary of monument names with their corresponding numbers.
+    :return: None.
+    """
+    for num, monument in monuments.items():
+        monument_path = os.path.join(images_path, f"{num}. {monument}")
+        images = [img for img in os.listdir(monument_path) if is_jpg(os.path.join(monument_path, img))]
+        print(f"Monument {monument} has {len(images)} images.")
+
+
 def main():
     """
     Main function to process the data.
@@ -145,16 +206,14 @@ def main():
     images_path = os.path.join(florence1k_path, 'images')
 
     # Blur faces in all images
-    #blur_all_faces(images_path, monuments)
+    #blur_all_faces(images_path, monuments) # FIXME
 
     # Rename all images
     #rename_all_images(images_path, monuments)
 
     # debug # TODO: remove
-    if check_directory(os.path.join(images_path, '1. santamariadelfiore')):
-        print('All images are JPEG images.')
-    else:
-        print('Not all images are JPEG images.')
+    #count_images(images_path, monuments)
+    #check_all_directories(images_path, monuments)
 
     # Remove metadata from all images
     #remove_all_metadata()
