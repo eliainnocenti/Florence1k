@@ -7,58 +7,16 @@ image renaming, and metadata removal.
 import os
 import cv2
 from tqdm import tqdm
-import numpy as np
 from utils.blur_faces import blur_face
 from utils.rename_images import rename_images
 from utils.rename_images import is_jpg
 from utils.rename_images import check_directory
 from utils.remove_metadata import remove_metadata
+from utils.check import find_large_images
+from utils.check import check_image_integrity
 
 base_path = '../../../Data/'
 florence1k_path = os.path.join(base_path, 'datasets', 'florence1k')
-
-
-def check_image_integrity(processed_image, original_image_path):
-    """
-    Check the integrity of a processed image against the original image.
-
-    :param processed_image: The processed image to check, as a NumPy array.
-    :param original_image_path: Path to the original image for comparison.
-    :return: True if the image passes all integrity checks, False otherwise.
-    """
-    try:
-        # Load the original image
-        original_img = cv2.imread(original_image_path)
-
-        # Check if either image is None
-        if processed_image is None or original_img is None:
-            return False
-
-        # Check if dimensions match
-        if processed_image.shape != original_img.shape:
-            return False
-
-        # Check image dimensions (height and width should be greater than 0)
-        if processed_image.shape[0] <= 0 or processed_image.shape[1] <= 0:
-            return False
-
-        # Check the number of channels (expecting 3 for BGR/RGB images)
-        if len(processed_image.shape) < 3 or processed_image.shape[2] != 3:
-            return False
-
-        # Check for significant changes in overall image content # TODO: check
-        diff = cv2.absdiff(processed_image, original_img)
-        non_zero_count = np.count_nonzero(diff)
-        if non_zero_count / processed_image.size > 0.5:  # If more than 50% of pixels changed
-            return False
-
-        # If all checks pass, the image is considered valid
-        return True
-
-    except Exception as e:
-        #logging.error(f"Error in check_image_integrity for {original_image_path}: {str(e)}")
-        print(f"Error in check_image_integrity for {original_image_path}: {str(e)}")
-        return False
 
 
 def blur_all_faces(images_path, monuments):
@@ -152,7 +110,21 @@ def remove_all_metadata():
     pass
 
 
-def check_all_directories(images_path, monuments):
+def count_images(images_path, monuments):
+    """
+    Count the number of images in each directory.
+
+    :param images_path: Path to the directory containing monument subdirectories.
+    :param monuments: Dictionary of monument names with their corresponding numbers.
+    :return: None.
+    """
+    for num, monument in monuments.items():
+        monument_path = os.path.join(images_path, f"{num}. {monument}")
+        images = [img for img in os.listdir(monument_path) if is_jpg(os.path.join(monument_path, img))]
+        print(f"Monument {monument} has {len(images)} images.")
+
+
+def check_all_directories_jpeg(images_path, monuments): # TODO: update name (?)
     """
     Check if all directories contain only JPEG images.
 
@@ -168,18 +140,25 @@ def check_all_directories(images_path, monuments):
             print(f'Not all images in {monument} are JPEG images.')
 
 
-def count_images(images_path, monuments):
+def check_all_directories_size(images_path, monuments): # TODO: update name (?)
     """
-    Count the number of images in each directory.
 
-    :param images_path: Path to the directory containing monument subdirectories.
-    :param monuments: Dictionary of monument names with their corresponding numbers.
-    :return: None.
+
+    :param images_path:
+    :param monuments:
+    :return:
     """
+    max_pixels = 178956970  # Example pixel limit
+
     for num, monument in monuments.items():
         monument_path = os.path.join(images_path, f"{num}. {monument}")
-        images = [img for img in os.listdir(monument_path) if is_jpg(os.path.join(monument_path, img))]
-        print(f"Monument {monument} has {len(images)} images.")
+        large_images = find_large_images(monument_path, max_pixels)
+        if len(large_images) > 0:
+            print(f"Monument {monument} has {len(large_images)} images exceeding {max_pixels} pixels.")
+            for image in large_images:
+                print(f"Image {image} exceeds {max_pixels} pixels.")
+        else:
+            print(f"All images in {monument} are below {max_pixels} pixels.")
 
 
 def main():
@@ -190,17 +169,17 @@ def main():
     """
     monuments = {
         "1": "santamariadelfiore",
-        #"2": "battisterosangiovanni",
-        #"3": "campanilegiotto",
-        #"4": "galleriauffizi",
-        #"5": "loggialanzi",
-        #"6": "palazzovecchio",
-        #"7": "pontevecchio",
-        #"8": "basilicasantacroce",
-        #"9": "palazzopitti",
-        #"10": "piazzalemichelangelo",
-        #"11": "basilicasantamarianovella",
-        #"12": "basilicasanminiato"
+        "2": "battisterosangiovanni",
+        "3": "campanilegiotto",
+        "4": "galleriauffizi",
+        "5": "loggialanzi",
+        "6": "palazzovecchio",
+        "7": "pontevecchio",
+        "8": "basilicasantacroce",
+        "9": "palazzopitti",
+        "10": "piazzalemichelangelo",
+        "11": "basilicasantamarianovella",
+        "12": "basilicasanminiato"
     }
 
     images_path = os.path.join(florence1k_path, 'images')
@@ -212,8 +191,12 @@ def main():
     #rename_all_images(images_path, monuments)
 
     # debug # TODO: remove
-    #count_images(images_path, monuments)
-    #check_all_directories(images_path, monuments)
+    print("\nNumber of images:")
+    count_images(images_path, monuments)
+    print("\nJPEG check:")
+    check_all_directories_jpeg(images_path, monuments)
+    print("\nSize check:")
+    check_all_directories_size(images_path, monuments)
 
     # Remove metadata from all images
     #remove_all_metadata()
