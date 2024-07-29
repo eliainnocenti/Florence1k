@@ -39,11 +39,27 @@ def format_json_for_mediapipe(json_data): # TODO: update name (?)
     annotations = json_data["annotations"]
 
     # Add background category
-    background = {
-        "id": 0,
-        "name": "background"
-    }
-    categories.insert(0, background)
+    background_exists = False
+    background_key_correct = False
+    key_0_exists = False
+
+    background = {"id": 0, "name": "background"}
+
+    for category in categories:
+        if category["name"] == "background":
+            background_exists = True
+            if category["id"] == 0:
+                background_key_correct = True
+            else:
+                return "Error: 'background' category exists but does not have key 0." # TODO: check error type
+        if category["id"] == 0 and category["name"] != "background":
+            key_0_exists = True
+
+    if key_0_exists and not background_key_correct:
+        return "Error: Another category with key 0 exists that is not 'background'." # TODO: check error type
+
+    if not background_exists:
+        categories.insert(0, background)
 
     # Now prune some of the data # TODO: do I really need that?
     for category in categories:

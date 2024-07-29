@@ -40,6 +40,9 @@ def blur_face(image): # TODO: image_path or image?
     :param image: image to process.
     :return: image.
     """
+
+    # FIXME: update script
+
     '''
     try:
         # OpenCV reads images by default in BGR format

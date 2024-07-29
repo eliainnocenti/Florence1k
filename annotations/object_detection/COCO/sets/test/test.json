@@ -1,0 +1,2716 @@
+{
+    "categories": [
+        {
+            "id": 0,
+            "name": "background"
+        },
+        {
+            "id": 1,
+            "name": "santamariadelfiore"
+        },
+        {
+            "id": 2,
+            "name": "battisterosangiovanni"
+        },
+        {
+            "id": 3,
+            "name": "campanilegiotto"
+        },
+        {
+            "id": 4,
+            "name": "galleriauffizi"
+        },
+        {
+            "id": 5,
+            "name": "loggialanzi"
+        },
+        {
+            "id": 6,
+            "name": "palazzovecchio"
+        },
+        {
+            "id": 7,
+            "name": "pontevecchio"
+        },
+        {
+            "id": 8,
+            "name": "basilicasantacroce"
+        },
+        {
+            "id": 9,
+            "name": "palazzopitti"
+        },
+        {
+            "id": 10,
+            "name": "piazzalemichelangelo"
+        },
+        {
+            "id": 11,
+            "name": "basilicasantamarianovella"
+        },
+        {
+            "id": 12,
+            "name": "basilicasanminiato"
+        }
+    ],
+    "images": [
+        {
+            "id": 91,
+            "width": 2500,
+            "height": 2500,
+            "file_name": "florence_santamariadelfiore_0091.jpg"
+        },
+        {
+            "id": 92,
+            "width": 3000,
+            "height": 4000,
+            "file_name": "florence_santamariadelfiore_0092.jpg"
+        },
+        {
+            "id": 93,
+            "width": 4000,
+            "height": 3000,
+            "file_name": "florence_santamariadelfiore_0093.jpg"
+        },
+        {
+            "id": 94,
+            "width": 4032,
+            "height": 3024,
+            "file_name": "florence_santamariadelfiore_0094.jpg"
+        },
+        {
+            "id": 95,
+            "width": 3024,
+            "height": 4032,
+            "file_name": "florence_santamariadelfiore_0095.jpg"
+        },
+        {
+            "id": 96,
+            "width": 3024,
+            "height": 4032,
+            "file_name": "florence_santamariadelfiore_0096.jpg"
+        },
+        {
+            "id": 97,
+            "width": 3072,
+            "height": 4080,
+            "file_name": "florence_santamariadelfiore_0097.jpg"
+        },
+        {
+            "id": 98,
+            "width": 2268,
+            "height": 4032,
+            "file_name": "florence_santamariadelfiore_0098.jpg"
+        },
+        {
+            "id": 99,
+            "width": 3072,
+            "height": 4080,
+            "file_name": "florence_santamariadelfiore_0099.jpg"
+        },
+        {
+            "id": 100,
+            "width": 3072,
+            "height": 4080,
+            "file_name": "florence_santamariadelfiore_0100.jpg"
+        },
+        {
+            "id": 191,
+            "width": 3024,
+            "height": 4032,
+            "file_name": "florence_battisterosangiovanni_0091.jpg"
+        },
+        {
+            "id": 192,
+            "width": 3024,
+            "height": 4032,
+            "file_name": "florence_battisterosangiovanni_0092.jpg"
+        },
+        {
+            "id": 193,
+            "width": 3024,
+            "height": 4032,
+            "file_name": "florence_battisterosangiovanni_0093.jpg"
+        },
+        {
+            "id": 194,
+            "width": 3024,
+            "height": 4032,
+            "file_name": "florence_battisterosangiovanni_0094.jpg"
+        },
+        {
+            "id": 195,
+            "width": 3024,
+            "height": 4032,
+            "file_name": "florence_battisterosangiovanni_0095.jpg"
+        },
+        {
+            "id": 196,
+            "width": 2448,
+            "height": 3744,
+            "file_name": "florence_battisterosangiovanni_0096.jpg"
+        },
+        {
+            "id": 197,
+            "width": 2268,
+            "height": 4032,
+            "file_name": "florence_battisterosangiovanni_0097.jpg"
+        },
+        {
+            "id": 198,
+            "width": 3072,
+            "height": 4080,
+            "file_name": "florence_battisterosangiovanni_0098.jpg"
+        },
+        {
+            "id": 199,
+            "width": 3072,
+            "height": 4080,
+            "file_name": "florence_battisterosangiovanni_0099.jpg"
+        },
+        {
+            "id": 200,
+            "width": 1080,
+            "height": 720,
+            "file_name": "florence_battisterosangiovanni_0100.jpg"
+        },
+        {
+            "id": 291,
+            "width": 2464,
+            "height": 3280,
+            "file_name": "florence_campanilegiotto_0091.jpg"
+        },
+        {
+            "id": 292,
+            "width": 4096,
+            "height": 3072,
+            "file_name": "florence_campanilegiotto_0092.jpg"
+        },
+        {
+            "id": 293,
+            "width": 1536,
+            "height": 2048,
+            "file_name": "florence_campanilegiotto_0093.jpg"
+        },
+        {
+            "id": 294,
+            "width": 3024,
+            "height": 4032,
+            "file_name": "florence_campanilegiotto_0094.jpg"
+        },
+        {
+            "id": 295,
+            "width": 3024,
+            "height": 4032,
+            "file_name": "florence_campanilegiotto_0095.jpg"
+        },
+        {
+            "id": 296,
+            "width": 4032,
+            "height": 3024,
+            "file_name": "florence_campanilegiotto_0096.jpg"
+        },
+        {
+            "id": 297,
+            "width": 4080,
+            "height": 3072,
+            "file_name": "florence_campanilegiotto_0097.jpg"
+        },
+        {
+            "id": 298,
+            "width": 3024,
+            "height": 4032,
+            "file_name": "florence_campanilegiotto_0098.jpg"
+        },
+        {
+            "id": 299,
+            "width": 3072,
+            "height": 4080,
+            "file_name": "florence_campanilegiotto_0099.jpg"
+        },
+        {
+            "id": 300,
+            "width": 3024,
+            "height": 4032,
+            "file_name": "florence_campanilegiotto_0100.jpg"
+        },
+        {
+            "id": 391,
+            "width": 2752,
+            "height": 5664,
+            "file_name": "florence_galleriauffizi_0091.jpg"
+        },
+        {
+            "id": 392,
+            "width": 2752,
+            "height": 5664,
+            "file_name": "florence_galleriauffizi_0092.jpg"
+        },
+        {
+            "id": 393,
+            "width": 4032,
+            "height": 3024,
+            "file_name": "florence_galleriauffizi_0093.jpg"
+        },
+        {
+            "id": 394,
+            "width": 3264,
+            "height": 1836,
+            "file_name": "florence_galleriauffizi_0094.jpg"
+        },
+        {
+            "id": 395,
+            "width": 3582,
+            "height": 4776,
+            "file_name": "florence_galleriauffizi_0095.jpg"
+        },
+        {
+            "id": 396,
+            "width": 2752,
+            "height": 5664,
+            "file_name": "florence_galleriauffizi_0096.jpg"
+        },
+        {
+            "id": 397,
+            "width": 2362,
+            "height": 1575,
+            "file_name": "florence_galleriauffizi_0097.jpg"
+        },
+        {
+            "id": 398,
+            "width": 4352,
+            "height": 3776,
+            "file_name": "florence_galleriauffizi_0098.jpg"
+        },
+        {
+            "id": 399,
+            "width": 1080,
+            "height": 1920,
+            "file_name": "florence_galleriauffizi_0099.jpg"
+        },
+        {
+            "id": 400,
+            "width": 1080,
+            "height": 1920,
+            "file_name": "florence_galleriauffizi_0100.jpg"
+        },
+        {
+            "id": 491,
+            "width": 4080,
+            "height": 3072,
+            "file_name": "florence_loggialanzi_0091.jpg"
+        },
+        {
+            "id": 492,
+            "width": 4032,
+            "height": 3024,
+            "file_name": "florence_loggialanzi_0092.jpg"
+        },
+        {
+            "id": 493,
+            "width": 4080,
+            "height": 3072,
+            "file_name": "florence_loggialanzi_0093.jpg"
+        },
+        {
+            "id": 494,
+            "width": 4080,
+            "height": 3072,
+            "file_name": "florence_loggialanzi_0094.jpg"
+        },
+        {
+            "id": 495,
+            "width": 4080,
+            "height": 3072,
+            "file_name": "florence_loggialanzi_0095.jpg"
+        },
+        {
+            "id": 496,
+            "width": 3072,
+            "height": 4080,
+            "file_name": "florence_loggialanzi_0096.jpg"
+        },
+        {
+            "id": 497,
+            "width": 4000,
+            "height": 3000,
+            "file_name": "florence_loggialanzi_0097.jpg"
+        },
+        {
+            "id": 498,
+            "width": 3072,
+            "height": 4080,
+            "file_name": "florence_loggialanzi_0098.jpg"
+        },
+        {
+            "id": 499,
+            "width": 4000,
+            "height": 3000,
+            "file_name": "florence_loggialanzi_0099.jpg"
+        },
+        {
+            "id": 500,
+            "width": 4576,
+            "height": 2574,
+            "file_name": "florence_loggialanzi_0100.jpg"
+        },
+        {
+            "id": 591,
+            "width": 3072,
+            "height": 4080,
+            "file_name": "florence_palazzovecchio_0091.jpg"
+        },
+        {
+            "id": 592,
+            "width": 4080,
+            "height": 3072,
+            "file_name": "florence_palazzovecchio_0092.jpg"
+        },
+        {
+            "id": 593,
+            "width": 3072,
+            "height": 4080,
+            "file_name": "florence_palazzovecchio_0093.jpg"
+        },
+        {
+            "id": 594,
+            "width": 4032,
+            "height": 3024,
+            "file_name": "florence_palazzovecchio_0094.jpg"
+        },
+        {
+            "id": 595,
+            "width": 1200,
+            "height": 799,
+            "file_name": "florence_palazzovecchio_0095.jpg"
+        },
+        {
+            "id": 596,
+            "width": 180,
+            "height": 280,
+            "file_name": "florence_palazzovecchio_0096.jpg"
+        },
+        {
+            "id": 597,
+            "width": 2161,
+            "height": 3829,
+            "file_name": "florence_palazzovecchio_0097.jpg"
+        },
+        {
+            "id": 598,
+            "width": 2048,
+            "height": 1365,
+            "file_name": "florence_palazzovecchio_0098.jpg"
+        },
+        {
+            "id": 599,
+            "width": 940,
+            "height": 628,
+            "file_name": "florence_palazzovecchio_0099.jpg"
+        },
+        {
+            "id": 600,
+            "width": 341,
+            "height": 512,
+            "file_name": "florence_palazzovecchio_0100.jpg"
+        },
+        {
+            "id": 691,
+            "width": 4032,
+            "height": 2010,
+            "file_name": "florence_pontevecchio_0091.jpg"
+        },
+        {
+            "id": 692,
+            "width": 4032,
+            "height": 3024,
+            "file_name": "florence_pontevecchio_0092.jpg"
+        },
+        {
+            "id": 693,
+            "width": 4032,
+            "height": 3024,
+            "file_name": "florence_pontevecchio_0093.jpg"
+        },
+        {
+            "id": 694,
+            "width": 3840,
+            "height": 2160,
+            "file_name": "florence_pontevecchio_0094.jpg"
+        },
+        {
+            "id": 695,
+            "width": 4080,
+            "height": 3072,
+            "file_name": "florence_pontevecchio_0095.jpg"
+        },
+        {
+            "id": 696,
+            "width": 3072,
+            "height": 4080,
+            "file_name": "florence_pontevecchio_0096.jpg"
+        },
+        {
+            "id": 697,
+            "width": 4032,
+            "height": 2268,
+            "file_name": "florence_pontevecchio_0097.jpg"
+        },
+        {
+            "id": 698,
+            "width": 3120,
+            "height": 4160,
+            "file_name": "florence_pontevecchio_0098.jpg"
+        },
+        {
+            "id": 699,
+            "width": 4128,
+            "height": 3096,
+            "file_name": "florence_pontevecchio_0099.jpg"
+        },
+        {
+            "id": 700,
+            "width": 201,
+            "height": 251,
+            "file_name": "florence_pontevecchio_0100.jpg"
+        },
+        {
+            "id": 791,
+            "width": 4624,
+            "height": 3472,
+            "file_name": "florence_basilicasantacroce_0091.jpg"
+        },
+        {
+            "id": 792,
+            "width": 4080,
+            "height": 3072,
+            "file_name": "florence_basilicasantacroce_0092.jpg"
+        },
+        {
+            "id": 793,
+            "width": 3072,
+            "height": 4080,
+            "file_name": "florence_basilicasantacroce_0093.jpg"
+        },
+        {
+            "id": 794,
+            "width": 1536,
+            "height": 2048,
+            "file_name": "florence_basilicasantacroce_0094.jpg"
+        },
+        {
+            "id": 795,
+            "width": 1920,
+            "height": 780,
+            "file_name": "florence_basilicasantacroce_0095.jpg"
+        },
+        {
+            "id": 796,
+            "width": 1200,
+            "height": 628,
+            "file_name": "florence_basilicasantacroce_0096.jpg"
+        },
+        {
+            "id": 797,
+            "width": 3008,
+            "height": 2000,
+            "file_name": "florence_basilicasantacroce_0097.jpg"
+        },
+        {
+            "id": 798,
+            "width": 1920,
+            "height": 640,
+            "file_name": "florence_basilicasantacroce_0098.jpg"
+        },
+        {
+            "id": 799,
+            "width": 512,
+            "height": 384,
+            "file_name": "florence_basilicasantacroce_0099.jpg"
+        },
+        {
+            "id": 800,
+            "width": 1500,
+            "height": 740,
+            "file_name": "florence_basilicasantacroce_0100.jpg"
+        },
+        {
+            "id": 891,
+            "width": 4080,
+            "height": 3072,
+            "file_name": "florence_palazzopitti_0091.jpg"
+        },
+        {
+            "id": 892,
+            "width": 4032,
+            "height": 2268,
+            "file_name": "florence_palazzopitti_0092.jpg"
+        },
+        {
+            "id": 893,
+            "width": 600,
+            "height": 375,
+            "file_name": "florence_palazzopitti_0093.jpg"
+        },
+        {
+            "id": 894,
+            "width": 1472,
+            "height": 687,
+            "file_name": "florence_palazzopitti_0094.jpg"
+        },
+        {
+            "id": 895,
+            "width": 348,
+            "height": 145,
+            "file_name": "florence_palazzopitti_0095.jpg"
+        },
+        {
+            "id": 896,
+            "width": 1024,
+            "height": 577,
+            "file_name": "florence_palazzopitti_0096.jpg"
+        },
+        {
+            "id": 897,
+            "width": 1600,
+            "height": 1037,
+            "file_name": "florence_palazzopitti_0097.jpg"
+        },
+        {
+            "id": 898,
+            "width": 940,
+            "height": 628,
+            "file_name": "florence_palazzopitti_0098.jpg"
+        },
+        {
+            "id": 899,
+            "width": 1600,
+            "height": 1067,
+            "file_name": "florence_palazzopitti_0099.jpg"
+        },
+        {
+            "id": 900,
+            "width": 512,
+            "height": 256,
+            "file_name": "florence_palazzopitti_0100.jpg"
+        },
+        {
+            "id": 991,
+            "width": 3000,
+            "height": 3000,
+            "file_name": "florence_piazzalemichelangelo_0091.jpg"
+        },
+        {
+            "id": 992,
+            "width": 4032,
+            "height": 3024,
+            "file_name": "florence_piazzalemichelangelo_0092.jpg"
+        },
+        {
+            "id": 993,
+            "width": 3840,
+            "height": 2160,
+            "file_name": "florence_piazzalemichelangelo_0093.jpg"
+        },
+        {
+            "id": 994,
+            "width": 3648,
+            "height": 2736,
+            "file_name": "florence_piazzalemichelangelo_0094.jpg"
+        },
+        {
+            "id": 995,
+            "width": 4608,
+            "height": 2592,
+            "file_name": "florence_piazzalemichelangelo_0095.jpg"
+        },
+        {
+            "id": 996,
+            "width": 4000,
+            "height": 3000,
+            "file_name": "florence_piazzalemichelangelo_0096.jpg"
+        },
+        {
+            "id": 997,
+            "width": 2592,
+            "height": 4608,
+            "file_name": "florence_piazzalemichelangelo_0097.jpg"
+        },
+        {
+            "id": 998,
+            "width": 4000,
+            "height": 1800,
+            "file_name": "florence_piazzalemichelangelo_0098.jpg"
+        },
+        {
+            "id": 999,
+            "width": 918,
+            "height": 517,
+            "file_name": "florence_piazzalemichelangelo_0099.jpg"
+        },
+        {
+            "id": 1000,
+            "width": 1053,
+            "height": 696,
+            "file_name": "florence_piazzalemichelangelo_0100.jpg"
+        },
+        {
+            "id": 1091,
+            "width": 3024,
+            "height": 4032,
+            "file_name": "florence_basilicasantamarianovella_0091.jpg"
+        },
+        {
+            "id": 1092,
+            "width": 5044,
+            "height": 3376,
+            "file_name": "florence_basilicasantamarianovella_0092.jpg"
+        },
+        {
+            "id": 1093,
+            "width": 2268,
+            "height": 4032,
+            "file_name": "florence_basilicasantamarianovella_0093.jpg"
+        },
+        {
+            "id": 1094,
+            "width": 1839,
+            "height": 1400,
+            "file_name": "florence_basilicasantamarianovella_0094.jpg"
+        },
+        {
+            "id": 1095,
+            "width": 4080,
+            "height": 3072,
+            "file_name": "florence_basilicasantamarianovella_0095.jpg"
+        },
+        {
+            "id": 1096,
+            "width": 3072,
+            "height": 4080,
+            "file_name": "florence_basilicasantamarianovella_0096.jpg"
+        },
+        {
+            "id": 1097,
+            "width": 4624,
+            "height": 3472,
+            "file_name": "florence_basilicasantamarianovella_0097.jpg"
+        },
+        {
+            "id": 1098,
+            "width": 3264,
+            "height": 2448,
+            "file_name": "florence_basilicasantamarianovella_0098.jpg"
+        },
+        {
+            "id": 1099,
+            "width": 1600,
+            "height": 2560,
+            "file_name": "florence_basilicasantamarianovella_0099.jpg"
+        },
+        {
+            "id": 1100,
+            "width": 4032,
+            "height": 3024,
+            "file_name": "florence_basilicasantamarianovella_0100.jpg"
+        },
+        {
+            "id": 1191,
+            "width": 2268,
+            "height": 4032,
+            "file_name": "florence_basilicasanminiato_0091.jpg"
+        },
+        {
+            "id": 1192,
+            "width": 2268,
+            "height": 4032,
+            "file_name": "florence_basilicasanminiato_0092.jpg"
+        },
+        {
+            "id": 1193,
+            "width": 4080,
+            "height": 3072,
+            "file_name": "florence_basilicasanminiato_0093.jpg"
+        },
+        {
+            "id": 1194,
+            "width": 1936,
+            "height": 1296,
+            "file_name": "florence_basilicasanminiato_0094.jpg"
+        },
+        {
+            "id": 1195,
+            "width": 5168,
+            "height": 5209,
+            "file_name": "florence_basilicasanminiato_0095.jpg"
+        },
+        {
+            "id": 1196,
+            "width": 1600,
+            "height": 1200,
+            "file_name": "florence_basilicasanminiato_0096.jpg"
+        },
+        {
+            "id": 1197,
+            "width": 2298,
+            "height": 3230,
+            "file_name": "florence_basilicasanminiato_0097.jpg"
+        },
+        {
+            "id": 1198,
+            "width": 2000,
+            "height": 1340,
+            "file_name": "florence_basilicasanminiato_0098.jpg"
+        },
+        {
+            "id": 1199,
+            "width": 1024,
+            "height": 575,
+            "file_name": "florence_basilicasanminiato_0099.jpg"
+        },
+        {
+            "id": 1200,
+            "width": 275,
+            "height": 183,
+            "file_name": "florence_basilicasanminiato_0100.jpg"
+        }
+    ],
+    "annotations": [
+        {
+            "id": 175,
+            "image_id": 91,
+            "category_id": 1,
+            "bbox": [
+                63.21,
+                439.74,
+                1517.59,
+                2060.26
+            ]
+        },
+        {
+            "id": 176,
+            "image_id": 91,
+            "category_id": 2,
+            "bbox": [
+                0.0,
+                1494.8,
+                690.12,
+                1005.2
+            ]
+        },
+        {
+            "id": 177,
+            "image_id": 91,
+            "category_id": 3,
+            "bbox": [
+                1515.81,
+                42.19,
+                699.54,
+                852.44
+            ]
+        },
+        {
+            "id": 178,
+            "image_id": 92,
+            "category_id": 3,
+            "bbox": [
+                126.82,
+                1645.47,
+                366.97,
+                1107.04
+            ]
+        },
+        {
+            "id": 179,
+            "image_id": 92,
+            "category_id": 1,
+            "bbox": [
+                567.19,
+                513.98,
+                2432.81,
+                2740.06
+            ]
+        },
+        {
+            "id": 180,
+            "image_id": 93,
+            "category_id": 1,
+            "bbox": [
+                130.64,
+                50.37,
+                3114.68,
+                2807.34
+            ]
+        },
+        {
+            "id": 181,
+            "image_id": 93,
+            "category_id": 3,
+            "bbox": [
+                2983.85,
+                73.3,
+                899.09,
+                2201.84
+            ]
+        },
+        {
+            "id": 182,
+            "image_id": 94,
+            "category_id": 3,
+            "bbox": [
+                2393.07,
+                203.67,
+                1451.89,
+                2270.32
+            ]
+        },
+        {
+            "id": 183,
+            "image_id": 94,
+            "category_id": 1,
+            "bbox": [
+                386.32,
+                518.1,
+                2136.22,
+                2094.6
+            ]
+        },
+        {
+            "id": 184,
+            "image_id": 95,
+            "category_id": 1,
+            "bbox": [
+                0.0,
+                444.11,
+                2785.02,
+                2688.0
+            ]
+        },
+        {
+            "id": 185,
+            "image_id": 96,
+            "category_id": 1,
+            "bbox": [
+                152.5,
+                536.59,
+                2823.64,
+                2564.7
+            ]
+        },
+        {
+            "id": 186,
+            "image_id": 97,
+            "category_id": 1,
+            "bbox": [
+                684.53,
+                1197.96,
+                2295.78,
+                2788.63
+            ]
+        },
+        {
+            "id": 187,
+            "image_id": 97,
+            "category_id": 3,
+            "bbox": [
+                2331.5,
+                879.8,
+                740.5,
+                1416.15
+            ]
+        },
+        {
+            "id": 188,
+            "image_id": 98,
+            "category_id": 3,
+            "bbox": [
+                1506.98,
+                240.66,
+                665.84,
+                1633.77
+            ]
+        },
+        {
+            "id": 189,
+            "image_id": 98,
+            "category_id": 1,
+            "bbox": [
+                27.35,
+                345.47,
+                1633.76,
+                1954.35
+            ]
+        },
+        {
+            "id": 190,
+            "image_id": 99,
+            "category_id": 1,
+            "bbox": [
+                0.0,
+                287.14,
+                3072.0,
+                3724.4
+            ]
+        },
+        {
+            "id": 191,
+            "image_id": 100,
+            "category_id": 1,
+            "bbox": [
+                347.65,
+                1366.4,
+                2289.54,
+                1890.28
+            ]
+        },
+        {
+            "id": 192,
+            "image_id": 100,
+            "category_id": 3,
+            "bbox": [
+                2231.69,
+                1079.43,
+                711.19,
+                1147.89
+            ]
+        },
+        {
+            "id": 335,
+            "image_id": 191,
+            "category_id": 2,
+            "bbox": [
+                0.0,
+                604.41,
+                1083.44,
+                2102.31
+            ]
+        },
+        {
+            "id": 336,
+            "image_id": 192,
+            "category_id": 2,
+            "bbox": [
+                2390.45,
+                43.38,
+                633.55,
+                2484.55
+            ]
+        },
+        {
+            "id": 337,
+            "image_id": 192,
+            "category_id": 1,
+            "bbox": [
+                503.92,
+                863.34,
+                1695.41,
+                1498.13
+            ]
+        },
+        {
+            "id": 338,
+            "image_id": 192,
+            "category_id": 3,
+            "bbox": [
+                1995.88,
+                530.43,
+                511.7,
+                1707.74
+            ]
+        },
+        {
+            "id": 339,
+            "image_id": 193,
+            "category_id": 3,
+            "bbox": [
+                1243.73,
+                666.06,
+                752.15,
+                2688.0
+            ]
+        },
+        {
+            "id": 340,
+            "image_id": 194,
+            "category_id": 2,
+            "bbox": [
+                325.13,
+                561.3,
+                924.77,
+                1824.83
+            ]
+        },
+        {
+            "id": 341,
+            "image_id": 195,
+            "category_id": 2,
+            "bbox": [
+                1669.13,
+                111.2,
+                1354.87,
+                2274.93
+            ]
+        },
+        {
+            "id": 342,
+            "image_id": 195,
+            "category_id": 1,
+            "bbox": [
+                1157.42,
+                1085.29,
+                530.2,
+                1091.23
+            ]
+        },
+        {
+            "id": 343,
+            "image_id": 196,
+            "category_id": 2,
+            "bbox": [
+                1278.39,
+                709.92,
+                1169.61,
+                2261.28
+            ]
+        },
+        {
+            "id": 344,
+            "image_id": 197,
+            "category_id": 2,
+            "bbox": [
+                0.0,
+                1060.63,
+                2268.0,
+                2946.93
+            ]
+        },
+        {
+            "id": 345,
+            "image_id": 198,
+            "category_id": 2,
+            "bbox": [
+                0.0,
+                12.64,
+                3072.0,
+                3206.61
+            ]
+        },
+        {
+            "id": 346,
+            "image_id": 199,
+            "category_id": 2,
+            "bbox": [
+                0.0,
+                368.24,
+                2163.06,
+                2875.96
+            ]
+        },
+        {
+            "id": 347,
+            "image_id": 200,
+            "category_id": 2,
+            "bbox": [
+                210.3,
+                31.91,
+                636.29,
+                588.99
+            ]
+        },
+        {
+            "id": 515,
+            "image_id": 291,
+            "category_id": 1,
+            "bbox": [
+                0.0,
+                300.81,
+                1711.11,
+                1875.72
+            ]
+        },
+        {
+            "id": 516,
+            "image_id": 291,
+            "category_id": 3,
+            "bbox": [
+                1781.33,
+                922.71,
+                506.54,
+                857.61
+            ]
+        },
+        {
+            "id": 517,
+            "image_id": 292,
+            "category_id": 3,
+            "bbox": [
+                2538.91,
+                108.08,
+                516.7,
+                1775.56
+            ]
+        },
+        {
+            "id": 518,
+            "image_id": 292,
+            "category_id": 1,
+            "bbox": [
+                1049.88,
+                450.98,
+                1545.4,
+                1413.88
+            ]
+        },
+        {
+            "id": 519,
+            "image_id": 292,
+            "category_id": 2,
+            "bbox": [
+                3149.55,
+                32.93,
+                946.45,
+                2033.91
+            ]
+        },
+        {
+            "id": 520,
+            "image_id": 293,
+            "category_id": 3,
+            "bbox": [
+                368.78,
+                131.41,
+                754.69,
+                1343.42
+            ]
+        },
+        {
+            "id": 521,
+            "image_id": 294,
+            "category_id": 3,
+            "bbox": [
+                0.0,
+                18.72,
+                3024.0,
+                4007.34
+            ]
+        },
+        {
+            "id": 522,
+            "image_id": 295,
+            "category_id": 3,
+            "bbox": [
+                898.48,
+                647.56,
+                647.34,
+                1226.87
+            ]
+        },
+        {
+            "id": 523,
+            "image_id": 296,
+            "category_id": 3,
+            "bbox": [
+                2393.07,
+                4.85,
+                901.65,
+                1687.7
+            ]
+        },
+        {
+            "id": 524,
+            "image_id": 297,
+            "category_id": 6,
+            "bbox": [
+                1046.59,
+                756.3,
+                1427.97,
+                2311.05
+            ]
+        },
+        {
+            "id": 525,
+            "image_id": 298,
+            "category_id": 2,
+            "bbox": [
+                4.54,
+                6.39,
+                1245.36,
+                2133.14
+            ]
+        },
+        {
+            "id": 526,
+            "image_id": 298,
+            "category_id": 3,
+            "bbox": [
+                1391.69,
+                68.04,
+                376.08,
+                2009.83
+            ]
+        },
+        {
+            "id": 527,
+            "image_id": 299,
+            "category_id": 3,
+            "bbox": [
+                2088.2,
+                861.08,
+                455.41,
+                1709.36
+            ]
+        },
+        {
+            "id": 528,
+            "image_id": 299,
+            "category_id": 2,
+            "bbox": [
+                559.76,
+                1135.58,
+                1528.44,
+                1422.38
+            ]
+        },
+        {
+            "id": 529,
+            "image_id": 300,
+            "category_id": 2,
+            "bbox": [
+                214.15,
+                2096.4,
+                1350.17,
+                1313.14
+            ]
+        },
+        {
+            "id": 530,
+            "image_id": 300,
+            "category_id": 3,
+            "bbox": [
+                2285.64,
+                777.03,
+                517.87,
+                1880.37
+            ]
+        },
+        {
+            "id": 531,
+            "image_id": 300,
+            "category_id": 1,
+            "bbox": [
+                1274.56,
+                1134.61,
+                1066.57,
+                1886.49
+            ]
+        },
+        {
+            "id": 662,
+            "image_id": 391,
+            "category_id": 4,
+            "bbox": [
+                0.0,
+                294.64,
+                2752.0,
+                3351.63
+            ]
+        },
+        {
+            "id": 663,
+            "image_id": 392,
+            "category_id": 6,
+            "bbox": [
+                1090.54,
+                779.63,
+                831.42,
+                4607.41
+            ]
+        },
+        {
+            "id": 664,
+            "image_id": 393,
+            "category_id": 4,
+            "bbox": [
+                0.0,
+                4.85,
+                4032.0,
+                2788.18
+            ]
+        },
+        {
+            "id": 665,
+            "image_id": 394,
+            "category_id": 4,
+            "bbox": [
+                137.59,
+                0.0,
+                1340.09,
+                1199.38
+            ]
+        },
+        {
+            "id": 666,
+            "image_id": 394,
+            "category_id": 4,
+            "bbox": [
+                1964.7,
+                0.0,
+                1264.47,
+                1317.35
+            ]
+        },
+        {
+            "id": 667,
+            "image_id": 394,
+            "category_id": 6,
+            "bbox": [
+                1571.45,
+                4.49,
+                229.91,
+                1095.06
+            ]
+        },
+        {
+            "id": 668,
+            "image_id": 395,
+            "category_id": 4,
+            "bbox": [
+                0.0,
+                21.73,
+                3582.0,
+                4301.32
+            ]
+        },
+        {
+            "id": 669,
+            "image_id": 396,
+            "category_id": 4,
+            "bbox": [
+                0.0,
+                17.5,
+                2752.0,
+                2909.95
+            ]
+        },
+        {
+            "id": 670,
+            "image_id": 397,
+            "category_id": 4,
+            "bbox": [
+                0.0,
+                5.98,
+                2362.0,
+                1416.05
+            ]
+        },
+        {
+            "id": 671,
+            "image_id": 398,
+            "category_id": 4,
+            "bbox": [
+                28.18,
+                1864.8,
+                4323.82,
+                1893.77
+            ]
+        },
+        {
+            "id": 672,
+            "image_id": 398,
+            "category_id": 4,
+            "bbox": [
+                51.28,
+                28.76,
+                4300.72,
+                1403.01
+            ]
+        },
+        {
+            "id": 673,
+            "image_id": 398,
+            "category_id": 6,
+            "bbox": [
+                282.23,
+                1587.66,
+                1483.84,
+                311.78
+            ]
+        },
+        {
+            "id": 674,
+            "image_id": 399,
+            "category_id": 6,
+            "bbox": [
+                413.82,
+                38.04,
+                290.64,
+                1174.31
+            ]
+        },
+        {
+            "id": 675,
+            "image_id": 399,
+            "category_id": 4,
+            "bbox": [
+                672.17,
+                58.59,
+                407.83,
+                1224.22
+            ]
+        },
+        {
+            "id": 676,
+            "image_id": 400,
+            "category_id": 4,
+            "bbox": [
+                0.0,
+                11.62,
+                1080.0,
+                1033.39
+            ]
+        },
+        {
+            "id": 802,
+            "image_id": 491,
+            "category_id": 5,
+            "bbox": [
+                252.76,
+                14.14,
+                3827.24,
+                2611.67
+            ]
+        },
+        {
+            "id": 803,
+            "image_id": 492,
+            "category_id": 5,
+            "bbox": [
+                3396.44,
+                1257.91,
+                635.56,
+                1225.32
+            ]
+        },
+        {
+            "id": 804,
+            "image_id": 492,
+            "category_id": 4,
+            "bbox": [
+                2957.18,
+                1687.93,
+                786.05,
+                836.92
+            ]
+        },
+        {
+            "id": 805,
+            "image_id": 492,
+            "category_id": 6,
+            "bbox": [
+                585.14,
+                37.21,
+                2469.14,
+                2649.47
+            ]
+        },
+        {
+            "id": 806,
+            "image_id": 493,
+            "category_id": 6,
+            "bbox": [
+                919.77,
+                75.2,
+                2132.55,
+                2931.09
+            ]
+        },
+        {
+            "id": 807,
+            "image_id": 493,
+            "category_id": 5,
+            "bbox": [
+                3061.71,
+                554.32,
+                1018.29,
+                2282.87
+            ]
+        },
+        {
+            "id": 808,
+            "image_id": 494,
+            "category_id": 5,
+            "bbox": [
+                1121.75,
+                211.42,
+                1911.78,
+                1864.81
+            ]
+        },
+        {
+            "id": 809,
+            "image_id": 495,
+            "category_id": 5,
+            "bbox": [
+                4.7,
+                28.23,
+                4075.3,
+                2837.14
+            ]
+        },
+        {
+            "id": 810,
+            "image_id": 496,
+            "category_id": 5,
+            "bbox": [
+                1932.24,
+                1759.43,
+                792.29,
+                636.33
+            ]
+        },
+        {
+            "id": 811,
+            "image_id": 496,
+            "category_id": 6,
+            "bbox": [
+                659.58,
+                867.32,
+                1166.6,
+                1547.16
+            ]
+        },
+        {
+            "id": 812,
+            "image_id": 497,
+            "category_id": 6,
+            "bbox": [
+                167.34,
+                110.0,
+                1743.12,
+                2247.71
+            ]
+        },
+        {
+            "id": 813,
+            "image_id": 497,
+            "category_id": 5,
+            "bbox": [
+                2080.18,
+                1151.28,
+                1504.59,
+                1224.78
+            ]
+        },
+        {
+            "id": 814,
+            "image_id": 498,
+            "category_id": 5,
+            "bbox": [
+                746.92,
+                1378.9,
+                1253.94,
+                985.67
+            ]
+        },
+        {
+            "id": 815,
+            "image_id": 498,
+            "category_id": 6,
+            "bbox": [
+                0.0,
+                0.0,
+                559.76,
+                2414.48
+            ]
+        },
+        {
+            "id": 816,
+            "image_id": 499,
+            "category_id": 6,
+            "bbox": [
+                20.55,
+                13.67,
+                2261.47,
+                2123.85
+            ]
+        },
+        {
+            "id": 817,
+            "image_id": 499,
+            "category_id": 5,
+            "bbox": [
+                2749.91,
+                1087.06,
+                1250.09,
+                963.31
+            ]
+        },
+        {
+            "id": 818,
+            "image_id": 500,
+            "category_id": 5,
+            "bbox": [
+                1259.43,
+                765.35,
+                1645.49,
+                1094.17
+            ]
+        },
+        {
+            "id": 936,
+            "image_id": 591,
+            "category_id": 6,
+            "bbox": [
+                1364.53,
+                929.71,
+                492.85,
+                792.29
+            ]
+        },
+        {
+            "id": 937,
+            "image_id": 592,
+            "category_id": 6,
+            "bbox": [
+                919.77,
+                4.74,
+                1841.32,
+                2048.0
+            ]
+        },
+        {
+            "id": 938,
+            "image_id": 592,
+            "category_id": 5,
+            "bbox": [
+                2930.19,
+                1103.9,
+                1149.81,
+                897.18
+            ]
+        },
+        {
+            "id": 939,
+            "image_id": 593,
+            "category_id": 4,
+            "bbox": [
+                1826.18,
+                330.81,
+                1245.82,
+                2326.97
+            ]
+        },
+        {
+            "id": 940,
+            "image_id": 593,
+            "category_id": 6,
+            "bbox": [
+                0.0,
+                6.4,
+                1639.03,
+                2657.62
+            ]
+        },
+        {
+            "id": 941,
+            "image_id": 594,
+            "category_id": 6,
+            "bbox": [
+                293.84,
+                605.95,
+                2302.68,
+                2145.47
+            ]
+        },
+        {
+            "id": 942,
+            "image_id": 594,
+            "category_id": 5,
+            "bbox": [
+                2892.44,
+                2048.59,
+                1139.56,
+                966.39
+            ]
+        },
+        {
+            "id": 943,
+            "image_id": 595,
+            "category_id": 6,
+            "bbox": [
+                146.16,
+                31.2,
+                420.27,
+                696.37
+            ]
+        },
+        {
+            "id": 944,
+            "image_id": 596,
+            "category_id": 6,
+            "bbox": [
+                31.57,
+                9.44,
+                79.21,
+                262.87
+            ]
+        },
+        {
+            "id": 945,
+            "image_id": 597,
+            "category_id": 6,
+            "bbox": [
+                0.0,
+                79.33,
+                2161.0,
+                3700.19
+            ]
+        },
+        {
+            "id": 946,
+            "image_id": 598,
+            "category_id": 5,
+            "bbox": [
+                768.25,
+                17.71,
+                1087.41,
+                1339.96
+            ]
+        },
+        {
+            "id": 947,
+            "image_id": 599,
+            "category_id": 6,
+            "bbox": [
+                137.3,
+                20.15,
+                680.81,
+                607.85
+            ]
+        },
+        {
+            "id": 948,
+            "image_id": 600,
+            "category_id": 6,
+            "bbox": [
+                99.24,
+                106.44,
+                137.0,
+                405.56
+            ]
+        },
+        {
+            "id": 1050,
+            "image_id": 691,
+            "category_id": 7,
+            "bbox": [
+                889.35,
+                1348.6,
+                347.52,
+                112.1
+            ]
+        },
+        {
+            "id": 1051,
+            "image_id": 691,
+            "category_id": 6,
+            "bbox": [
+                1838.49,
+                1116.92,
+                89.69,
+                183.1
+            ]
+        },
+        {
+            "id": 1052,
+            "image_id": 691,
+            "category_id": 1,
+            "bbox": [
+                2597.1,
+                1079.55,
+                313.85,
+                242.89
+            ]
+        },
+        {
+            "id": 1053,
+            "image_id": 691,
+            "category_id": 3,
+            "bbox": [
+                2477.49,
+                1128.13,
+                82.2,
+                209.26
+            ]
+        },
+        {
+            "id": 1054,
+            "image_id": 691,
+            "category_id": 8,
+            "bbox": [
+                3490.16,
+                1247.71,
+                538.09,
+                269.05
+            ]
+        },
+        {
+            "id": 1055,
+            "image_id": 692,
+            "category_id": 7,
+            "bbox": [
+                1144.63,
+                1160.81,
+                2006.75,
+                522.5
+            ]
+        },
+        {
+            "id": 1056,
+            "image_id": 693,
+            "category_id": 7,
+            "bbox": [
+                0.0,
+                1253.29,
+                1241.73,
+                393.03
+            ]
+        },
+        {
+            "id": 1057,
+            "image_id": 693,
+            "category_id": 4,
+            "bbox": [
+                2790.72,
+                846.39,
+                1068.08,
+                661.21
+            ]
+        },
+        {
+            "id": 1058,
+            "image_id": 694,
+            "category_id": 7,
+            "bbox": [
+                142.43,
+                581.6,
+                1790.11,
+                629.91
+            ]
+        },
+        {
+            "id": 1059,
+            "image_id": 695,
+            "category_id": 7,
+            "bbox": [
+                102.45,
+                1460.89,
+                1836.62,
+                685.8
+            ]
+        },
+        {
+            "id": 1060,
+            "image_id": 696,
+            "category_id": 7,
+            "bbox": [
+                129.3,
+                1815.58,
+                2482.94,
+                717.43
+            ]
+        },
+        {
+            "id": 1061,
+            "image_id": 697,
+            "category_id": 7,
+            "bbox": [
+                508.19,
+                700.64,
+                3094.07,
+                784.73
+            ]
+        },
+        {
+            "id": 1062,
+            "image_id": 698,
+            "category_id": 4,
+            "bbox": [
+                1747.88,
+                1844.57,
+                362.57,
+                623.36
+            ]
+        },
+        {
+            "id": 1063,
+            "image_id": 699,
+            "category_id": 7,
+            "bbox": [
+                234.41,
+                909.0,
+                3536.26,
+                2106.6
+            ]
+        },
+        {
+            "id": 1064,
+            "image_id": 700,
+            "category_id": 7,
+            "bbox": [
+                0.0,
+                112.27,
+                201.0,
+                103.24
+            ]
+        },
+        {
+            "id": 1166,
+            "image_id": 791,
+            "category_id": 8,
+            "bbox": [
+                1449.07,
+                865.09,
+                1704.14,
+                1688.22
+            ]
+        },
+        {
+            "id": 1167,
+            "image_id": 792,
+            "category_id": 8,
+            "bbox": [
+                797.64,
+                145.66,
+                2132.55,
+                2414.39
+            ]
+        },
+        {
+            "id": 1168,
+            "image_id": 793,
+            "category_id": 8,
+            "bbox": [
+                17.01,
+                143.65,
+                3054.99,
+                3736.88
+            ]
+        },
+        {
+            "id": 1169,
+            "image_id": 794,
+            "category_id": 8,
+            "bbox": [
+                519.09,
+                795.29,
+                698.33,
+                779.74
+            ]
+        },
+        {
+            "id": 1170,
+            "image_id": 795,
+            "category_id": 8,
+            "bbox": [
+                142.43,
+                3.82,
+                1576.57,
+                726.0
+            ]
+        },
+        {
+            "id": 1171,
+            "image_id": 796,
+            "category_id": 8,
+            "bbox": [
+                302.49,
+                2.55,
+                643.93,
+                599.44
+            ]
+        },
+        {
+            "id": 1172,
+            "image_id": 797,
+            "category_id": 8,
+            "bbox": [
+                722.54,
+                143.64,
+                1431.19,
+                1565.75
+            ]
+        },
+        {
+            "id": 1173,
+            "image_id": 798,
+            "category_id": 8,
+            "bbox": [
+                336.39,
+                0.0,
+                1145.95,
+                601.17
+            ]
+        },
+        {
+            "id": 1174,
+            "image_id": 799,
+            "category_id": 8,
+            "bbox": [
+                37.86,
+                7.03,
+                385.17,
+                331.16
+            ]
+        },
+        {
+            "id": 1175,
+            "image_id": 800,
+            "category_id": 8,
+            "bbox": [
+                223.81,
+                21.12,
+                996.76,
+                718.88
+            ]
+        },
+        {
+            "id": 1289,
+            "image_id": 891,
+            "category_id": 9,
+            "bbox": [
+                0.0,
+                662.36,
+                4018.94,
+                1465.54
+            ]
+        },
+        {
+            "id": 1290,
+            "image_id": 892,
+            "category_id": 9,
+            "bbox": [
+                0.0,
+                338.17,
+                3990.89,
+                964.09
+            ]
+        },
+        {
+            "id": 1291,
+            "image_id": 893,
+            "category_id": 9,
+            "bbox": [
+                54.9,
+                64.53,
+                481.08,
+                186.93
+            ]
+        },
+        {
+            "id": 1292,
+            "image_id": 894,
+            "category_id": 9,
+            "bbox": [
+                220.94,
+                117.67,
+                1028.63,
+                401.08
+            ]
+        },
+        {
+            "id": 1293,
+            "image_id": 895,
+            "category_id": 9,
+            "bbox": [
+                0.0,
+                4.93,
+                252.86,
+                135.46
+            ]
+        },
+        {
+            "id": 1294,
+            "image_id": 896,
+            "category_id": 9,
+            "bbox": [
+                1.86,
+                21.31,
+                1019.25,
+                437.51
+            ]
+        },
+        {
+            "id": 1295,
+            "image_id": 897,
+            "category_id": 9,
+            "bbox": [
+                0.0,
+                59.49,
+                1600.0,
+                959.31
+            ]
+        },
+        {
+            "id": 1296,
+            "image_id": 898,
+            "category_id": 9,
+            "bbox": [
+                92.16,
+                242.92,
+                745.15,
+                267.91
+            ]
+        },
+        {
+            "id": 1297,
+            "image_id": 899,
+            "category_id": 9,
+            "bbox": [
+                451.68,
+                288.04,
+                794.54,
+                378.51
+            ]
+        },
+        {
+            "id": 1298,
+            "image_id": 900,
+            "category_id": 9,
+            "bbox": [
+                0.48,
+                48.74,
+                510.58,
+                121.0
+            ]
+        },
+        {
+            "id": 1534,
+            "image_id": 991,
+            "category_id": 7,
+            "bbox": [
+                1002.2,
+                1353.12,
+                1339.45,
+                380.73
+            ]
+        },
+        {
+            "id": 1535,
+            "image_id": 992,
+            "category_id": 8,
+            "bbox": [
+                2730.61,
+                693.8,
+                1271.56,
+                799.93
+            ]
+        },
+        {
+            "id": 1536,
+            "image_id": 992,
+            "category_id": 3,
+            "bbox": [
+                737.73,
+                818.65,
+                115.6,
+                379.15
+            ]
+        },
+        {
+            "id": 1537,
+            "image_id": 992,
+            "category_id": 1,
+            "bbox": [
+                885.69,
+                666.06,
+                684.33,
+                573.36
+            ]
+        },
+        {
+            "id": 1538,
+            "image_id": 993,
+            "category_id": 1,
+            "bbox": [
+                2448.57,
+                382.3,
+                775.83,
+                754.48
+            ]
+        },
+        {
+            "id": 1539,
+            "image_id": 993,
+            "category_id": 3,
+            "bbox": [
+                2195.89,
+                546.01,
+                167.27,
+                512.47
+            ]
+        },
+        {
+            "id": 1540,
+            "image_id": 993,
+            "category_id": 6,
+            "bbox": [
+                359.52,
+                350.27,
+                523.15,
+                629.92
+            ]
+        },
+        {
+            "id": 1541,
+            "image_id": 994,
+            "category_id": 10,
+            "bbox": [
+                0.0,
+                866.03,
+                3648.0,
+                1096.07
+            ]
+        },
+        {
+            "id": 1542,
+            "image_id": 995,
+            "category_id": 7,
+            "bbox": [
+                1892.04,
+                945.67,
+                290.4,
+                102.49
+            ]
+        },
+        {
+            "id": 1543,
+            "image_id": 995,
+            "category_id": 6,
+            "bbox": [
+                2844.38,
+                672.35,
+                239.16,
+                256.23
+            ]
+        },
+        {
+            "id": 1544,
+            "image_id": 995,
+            "category_id": 3,
+            "bbox": [
+                3617.37,
+                710.78,
+                68.33,
+                226.35
+            ]
+        },
+        {
+            "id": 1545,
+            "image_id": 995,
+            "category_id": 1,
+            "bbox": [
+                3732.67,
+                604.02,
+                392.9,
+                350.19
+            ]
+        },
+        {
+            "id": 1546,
+            "image_id": 996,
+            "category_id": 1,
+            "bbox": [
+                2240.73,
+                1110.0,
+                229.36,
+                201.84
+            ]
+        },
+        {
+            "id": 1547,
+            "image_id": 996,
+            "category_id": 3,
+            "bbox": [
+                2162.75,
+                1142.11,
+                50.46,
+                151.38
+            ]
+        },
+        {
+            "id": 1548,
+            "image_id": 996,
+            "category_id": 6,
+            "bbox": [
+                1786.61,
+                1146.7,
+                110.09,
+                151.37
+            ]
+        },
+        {
+            "id": 1549,
+            "image_id": 997,
+            "category_id": 10,
+            "bbox": [
+                263.56,
+                514.4,
+                1867.16,
+                3663.85
+            ]
+        },
+        {
+            "id": 1550,
+            "image_id": 998,
+            "category_id": 7,
+            "bbox": [
+                318.8,
+                751.8,
+                322.53,
+                100.09
+            ]
+        },
+        {
+            "id": 1551,
+            "image_id": 998,
+            "category_id": 6,
+            "bbox": [
+                1260.42,
+                514.54,
+                174.23,
+                211.31
+            ]
+        },
+        {
+            "id": 1552,
+            "image_id": 998,
+            "category_id": 3,
+            "bbox": [
+                1894.34,
+                581.27,
+                59.31,
+                155.7
+            ]
+        },
+        {
+            "id": 1553,
+            "image_id": 998,
+            "category_id": 1,
+            "bbox": [
+                1983.31,
+                529.37,
+                263.21,
+                263.21
+            ]
+        },
+        {
+            "id": 1554,
+            "image_id": 998,
+            "category_id": 8,
+            "bbox": [
+                2724.74,
+                518.25,
+                663.57,
+                437.44
+            ]
+        },
+        {
+            "id": 1555,
+            "image_id": 999,
+            "category_id": 8,
+            "bbox": [
+                376.08,
+                211.28,
+                68.91,
+                37.44
+            ]
+        },
+        {
+            "id": 1556,
+            "image_id": 999,
+            "category_id": 6,
+            "bbox": [
+                90.21,
+                186.61,
+                42.54,
+                51.05
+            ]
+        },
+        {
+            "id": 1557,
+            "image_id": 999,
+            "category_id": 3,
+            "bbox": [
+                256.97,
+                211.28,
+                10.21,
+                29.78
+            ]
+        },
+        {
+            "id": 1558,
+            "image_id": 999,
+            "category_id": 1,
+            "bbox": [
+                291.0,
+                199.37,
+                33.18,
+                37.43
+            ]
+        },
+        {
+            "id": 1559,
+            "image_id": 1000,
+            "category_id": 1,
+            "bbox": [
+                229.57,
+                191.58,
+                141.55,
+                109.62
+            ]
+        },
+        {
+            "id": 1560,
+            "image_id": 1000,
+            "category_id": 3,
+            "bbox": [
+                199.78,
+                222.44,
+                24.47,
+                80.88
+            ]
+        },
+        {
+            "id": 1561,
+            "image_id": 1000,
+            "category_id": 8,
+            "bbox": [
+                530.75,
+                153.27,
+                283.08,
+                193.69
+            ]
+        },
+        {
+            "id": 1657,
+            "image_id": 1091,
+            "category_id": 11,
+            "bbox": [
+                41.53,
+                678.39,
+                2946.94,
+                2737.32
+            ]
+        },
+        {
+            "id": 1658,
+            "image_id": 1092,
+            "category_id": 11,
+            "bbox": [
+                898.5,
+                727.63,
+                3763.15,
+                2364.23
+            ]
+        },
+        {
+            "id": 1659,
+            "image_id": 1093,
+            "category_id": 11,
+            "bbox": [
+                218.47,
+                918.83,
+                1929.69,
+                2188.62
+            ]
+        },
+        {
+            "id": 1660,
+            "image_id": 1094,
+            "category_id": 11,
+            "bbox": [
+                529.88,
+                237.68,
+                1113.15,
+                755.65
+            ]
+        },
+        {
+            "id": 1661,
+            "image_id": 1095,
+            "category_id": 11,
+            "bbox": [
+                947.95,
+                333.55,
+                1939.95,
+                1601.76
+            ]
+        },
+        {
+            "id": 1662,
+            "image_id": 1096,
+            "category_id": 11,
+            "bbox": [
+                0.0,
+                168.61,
+                2899.21,
+                2801.1
+            ]
+        },
+        {
+            "id": 1663,
+            "image_id": 1097,
+            "category_id": 11,
+            "bbox": [
+                1682.66,
+                440.38,
+                1746.61,
+                1571.43
+            ]
+        },
+        {
+            "id": 1664,
+            "image_id": 1098,
+            "category_id": 11,
+            "bbox": [
+                1098.52,
+                426.63,
+                1957.65,
+                1302.61
+            ]
+        },
+        {
+            "id": 1665,
+            "image_id": 1099,
+            "category_id": 11,
+            "bbox": [
+                300.98,
+                207.43,
+                1229.12,
+                1013.82
+            ]
+        },
+        {
+            "id": 1666,
+            "image_id": 1100,
+            "category_id": 11,
+            "bbox": [
+                104.26,
+                310.02,
+                3921.03,
+                2163.97
+            ]
+        },
+        {
+            "id": 1780,
+            "image_id": 1191,
+            "category_id": 12,
+            "bbox": [
+                742.51,
+                1547.67,
+                832.29,
+                641.18
+            ]
+        },
+        {
+            "id": 1781,
+            "image_id": 1192,
+            "category_id": 12,
+            "bbox": [
+                206.14,
+                1584.66,
+                1726.24,
+                1270.02
+            ]
+        },
+        {
+            "id": 1782,
+            "image_id": 1193,
+            "category_id": 12,
+            "bbox": [
+                1084.17,
+                1033.44,
+                1996.33,
+                1395.08
+            ]
+        },
+        {
+            "id": 1783,
+            "image_id": 1194,
+            "category_id": 12,
+            "bbox": [
+                136.63,
+                172.5,
+                1561.54,
+                1064.14
+            ]
+        },
+        {
+            "id": 1784,
+            "image_id": 1195,
+            "category_id": 12,
+            "bbox": [
+                1050.52,
+                505.72,
+                2596.53,
+                2835.49
+            ]
+        },
+        {
+            "id": 1785,
+            "image_id": 1196,
+            "category_id": 12,
+            "bbox": [
+                202.84,
+                249.63,
+                838.54,
+                594.5
+            ]
+        },
+        {
+            "id": 1786,
+            "image_id": 1197,
+            "category_id": 12,
+            "bbox": [
+                455.24,
+                533.27,
+                1442.14,
+                1037.16
+            ]
+        },
+        {
+            "id": 1787,
+            "image_id": 1198,
+            "category_id": 12,
+            "bbox": [
+                40.03,
+                26.71,
+                1959.97,
+                1311.31
+            ]
+        },
+        {
+            "id": 1788,
+            "image_id": 1199,
+            "category_id": 12,
+            "bbox": [
+                195.46,
+                211.12,
+                252.44,
+                182.21
+            ]
+        },
+        {
+            "id": 1789,
+            "image_id": 1200,
+            "category_id": 12,
+            "bbox": [
+                53.84,
+                20.85,
+                132.35,
+                158.94
+            ]
+        }
+    ]
+}

@@ -20,3 +20,6 @@ requirements.txt
 
 # logs
 logs/
+
+# tmp
+scripts/tmp.py
