@@ -1,5 +1,32 @@
 """
-TODO: add descriptions
+This script contains functions to create and format JSON files for the annotations.
+
+Functions:
+----------
+1. create_json(categories, images, annotations, output_folder, name="labels")
+    Creates a JSON file for the annotations.
+
+2. format_json_for_mediapipe(json_data)
+    Formats the JSON data for use with MediaPipe.
+
+3. process_json_annotations(annotation_path)
+    Process JSON annotations for use with MediaPipe.
+
+4. update_annotations(categories, images, annotations, n_images, n_annotations)
+    Update the IDs for the images and annotations.
+
+Dependencies:
+-------------
+- os
+- json
+
+Usage:
+------
+To run this script, ensure that the required libraries are installed and the data directory is correctly set.
+
+Author:
+-------
+Elia Innocenti
 """
 
 import os

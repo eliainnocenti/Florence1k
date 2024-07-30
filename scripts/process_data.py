@@ -1,19 +1,59 @@
 """
-TODO: add descriptions
-This script processes images for the Florence1k dataset, including face blurring,
-image renaming, and metadata removal.
+This script processes images for the Florence1k dataset, including face blurring, image renaming, and metadata removal.
+
+Functions:
+----------
+1. blur_all_faces(images_path, monuments)
+    Blur faces in all images within the specified monuments.
+
+2. rename_all_images(images_path, monuments)
+    Rename all images within the specified monuments.
+
+3. remove_all_metadata()
+    Remove metadata from all images.
+
+4. count_images(images_path, monuments) # TODO: move to check.py
+    Count the number of images in each directory.
+
+5. check_all_directories_jpeg(images_path, monuments) # TODO: move to check.py
+    Check if all directories contain only JPEG images.
+
+6. check_all_directories_size(images_path, monuments) # TODO: move to check.py
+    Check if all directories contain only JPEG images.
+
+Dependencies:
+-------------
+- os
+- cv2
+- tqdm
+- utils.blur_faces
+- utils.rename_images
+- utils.remove_metadata
+- utils.check
+
+Usage:
+------
+To run this script, ensure that the required libraries are installed and the data directory is correctly set.
+
+Author:
+-------
+Elia Innocenti
 """
 
 import os
 import cv2
 from tqdm import tqdm
+
 from utils.blur_faces import blur_face
 from utils.rename_images import rename_images
-from utils.rename_images import is_jpg
 from utils.rename_images import check_directory
 from utils.remove_metadata import remove_metadata
 from utils.check import find_large_images
 from utils.check import check_image_integrity
+from utils.check import is_jpg
+from utils.check import count_images
+from utils.check import check_all_directories_jpeg
+from utils.check import check_all_directories_size
 
 base_path = '../../../Data/'
 florence1k_path = os.path.join(base_path, 'datasets', 'florence1k')
@@ -33,7 +73,6 @@ def blur_all_faces(images_path, monuments):
     :param monuments: Dictionary of monument names with their corresponding numbers.
     :return: None.
     """
-    #total_images = sum(len(os.listdir(os.path.join(images_path, f"{num}. {name}"))) for num, name in monuments.items())
     total_images = sum(len([f for f in os.listdir(os.path.join(images_path, f"{num}. {name}"))
                             if is_jpg(os.path.join(images_path, f"{num}. {name}", f))])
                        for num, name in monuments.items())
@@ -46,7 +85,6 @@ def blur_all_faces(images_path, monuments):
                 image_path = os.path.join(monument_path, image)
 
                 if not is_jpg(image_path):
-                    #logging.warning(f"Skipping invalid image: {image_path}")
                     print(f"Skipping invalid image: {image_path}")
                     continue
 
@@ -59,19 +97,15 @@ def blur_all_faces(images_path, monuments):
 
                     if check_image_integrity(blurred_img, image_path):
                         cv2.imwrite(image_path, blurred_img) # If the image already exists, it will be overwritten
-                        #cv2.imwrite(image_path, cv2.cvtColor(img, cv2.COLOR_RGB2BGR))
                     else:
                         print(f"Warning: Integrity check failed for {image_path}. Image not saved.")
 
                 except cv2.error as e:
                     if "Invalid SOS parameters for sequential JPEG" in str(e):
-                        #logging.warning(f"Invalid JPEG in {image_path}. Skipping.")
                         print(f"Invalid JPEG in {image_path}. Skipping.")
                     else:
-                        #logging.error(f"OpenCV error processing image at {image_path}: {str(e)}")
                         print(f"OpenCV error processing image at {image_path}: {str(e)}")
                 except Exception as e:
-                    #logging.error(f"Error processing image at {image_path}: {str(e)}")
                     print(f"Error processing image at {image_path}: {str(e)}")
 
                 progress_bar.update(1)
@@ -110,57 +144,6 @@ def remove_all_metadata():
     pass
 
 
-def count_images(images_path, monuments):
-    """
-    Count the number of images in each directory.
-
-    :param images_path: Path to the directory containing monument subdirectories.
-    :param monuments: Dictionary of monument names with their corresponding numbers.
-    :return: None.
-    """
-    for num, monument in monuments.items():
-        monument_path = os.path.join(images_path, f"{num}. {monument}")
-        images = [img for img in os.listdir(monument_path) if is_jpg(os.path.join(monument_path, img))]
-        print(f"Monument {monument} has {len(images)} images.")
-
-
-def check_all_directories_jpeg(images_path, monuments): # TODO: update name (?)
-    """
-    Check if all directories contain only JPEG images.
-
-    :param images_path: Path to the directory containing monument subdirectories.
-    :param monuments: Dictionary of monument names with their corresponding numbers.
-    :return: None.
-    """
-    for num, monument in monuments.items():
-        monument_path = os.path.join(images_path, f"{num}. {monument}")
-        if check_directory(monument_path):
-            print(f'All images in {monument} are JPEG images.')
-        else:
-            print(f'Not all images in {monument} are JPEG images.')
-
-
-def check_all_directories_size(images_path, monuments): # TODO: update name (?)
-    """
-
-
-    :param images_path:
-    :param monuments:
-    :return:
-    """
-    max_pixels = 178956970  # Example pixel limit
-
-    for num, monument in monuments.items():
-        monument_path = os.path.join(images_path, f"{num}. {monument}")
-        large_images = find_large_images(monument_path, max_pixels)
-        if len(large_images) > 0:
-            print(f"Monument {monument} has {len(large_images)} images exceeding {max_pixels} pixels.")
-            for image in large_images:
-                print(f"Image {image} exceeds {max_pixels} pixels.")
-        else:
-            print(f"All images in {monument} are below {max_pixels} pixels.")
-
-
 def main():
     """
     Main function to process the data.
@@ -187,16 +170,23 @@ def main():
     # Blur faces in all images
     #blur_all_faces(images_path, monuments) # FIXME
 
+    # debug # TODO: remove
+    test_image_path = os.path.join(images_path, '1. santamariadelfiore', 'florence_santamariadelfiore_0001.jpg')
+    test_image = cv2.imread(test_image_path)
+    blurred_test_image = blur_face(test_image)
+
     # Rename all images
     #rename_all_images(images_path, monuments)
 
     # debug # TODO: remove
+    '''
     print("\nNumber of images:")
     count_images(images_path, monuments)
     print("\nJPEG check:")
     check_all_directories_jpeg(images_path, monuments)
     print("\nSize check:")
     check_all_directories_size(images_path, monuments)
+    '''
 
     # Remove metadata from all images
     #remove_all_metadata()

@@ -1,9 +1,38 @@
 """
-TODO: add descriptions
+This script contains functions to process the annotations for the Florence1K dataset.
+
+Functions:
+----------
+1. process_all_json_annotations(annotations_path, output_folder, monuments)
+    Process all JSON annotations for the specified monuments.
+
+2. merge_all_json_annotations(annotations_path, output_folder, monuments)
+    Merge all JSON annotations into a single JSON file.
+
+3. split_train_val_test(monuments, train_percent=0.6, val_percent=0.3, test_percent=0.1, type='json')
+    Split the annotations into training, validation, and test sets.
+
+4. split_annotations(type='json')
+    Split the annotations into training, validation, and test sets.
+
+Dependencies:
+-------------
+- os
+- json
+- utils.annotations
+
+Usage:
+------
+To run this script, ensure that the required libraries are installed and the data directory is correctly set.
+
+Author:
+-------
+Elia Innocenti
 """
 
 import os
 import json
+
 from utils.annotations import create_json
 from utils.annotations import process_json_annotations
 from utils.annotations import update_annotations

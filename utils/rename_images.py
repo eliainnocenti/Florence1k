@@ -1,57 +1,43 @@
 """
-TODO: add descriptions
+This script renames all images in a specified directory to a standard format.
+
+Functions:
+----------
+1. rename_images(monument_path, monument)
+    Rename images in the specified monument directory.
+
+Dependencies:
+-------------
+- os
+- logging
+- PIL.Image
+- utils.check
+
+Usage:
+------
+To run this script, ensure that the required libraries are installed and the data directory is correctly set.
+
+Author:
+-------
+Elia Innocenti
 """
 
-import numpy as np
-import cv2
 import os
 import logging
 from PIL import Image
+
+from utils.check import check_directory
 
 # Handling DecompressionBombWarning
 Image.MAX_IMAGE_PIXELS = 200000000 # TODO: check
 
 
-def is_jpg(filename):
-    """
-    Function to check if a file is a JPEG image.
-
-    :param filename: path to the file.
-    :return: True if the file is a JPEG image, False otherwise.
-    """
-    try:
-        with Image.open(filename) as img:
-            return img.format == 'JPEG'
-    except IOError:
-        return False
-
-
-def check_directory(dir_path):
-    """
-    Function to check if all files in a directory are JPEG images.
-
-    :param dir_path: path to the directory.
-    :return: True if all files are JPEG images, False otherwise.
-    """
-    valid = True
-    for file in os.listdir(dir_path):
-        if not is_jpg(os.path.join(dir_path, file)):
-            if file.endswith('.DS_Store'): # TODO: check
-                continue
-            else:
-                print(f"File {os.path.join(dir_path, file)} is not a JPEG image.")
-                valid = False
-
-    return valid
-
-
-def rename_images(monument_path, monument, monument_number):
+def rename_images(monument_path, monument):
     """
     Function to rename images in the specified monument directory.
 
     :param monument_path: path to the directory containing images.
     :param monument: name of the monument.
-    :param monument_number: number of the monument.
     :return: None.
     """
     # Setup logging
