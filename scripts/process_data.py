@@ -12,14 +12,8 @@ Functions:
 3. remove_all_metadata()
     Remove metadata from all images.
 
-4. count_images(images_path, monuments) # TODO: move to check.py
-    Count the number of images in each directory.
-
-5. check_all_directories_jpeg(images_path, monuments) # TODO: move to check.py
-    Check if all directories contain only JPEG images.
-
-6. check_all_directories_size(images_path, monuments) # TODO: move to check.py
-    Check if all directories contain only JPEG images.
+4. list_all_images(images_path, monuments, output_file)
+    List all images and save the data to a CSV file.
 
 Dependencies:
 -------------
@@ -44,10 +38,13 @@ import os
 import cv2
 from tqdm import tqdm
 
-from utils.blur_faces import blur_face
+from utils.blur_faces import blur_faces
 from utils.rename_images import rename_images
 from utils.rename_images import check_directory
 from utils.remove_metadata import remove_metadata
+from utils.list_images import process_directory
+from utils.list_images import create_csv
+from utils.list_images import custom_sort_key
 from utils.check import find_large_images
 from utils.check import check_image_integrity
 from utils.check import is_jpg
@@ -93,7 +90,7 @@ def blur_all_faces(images_path, monuments):
                     if img is None:
                         raise ValueError(f"Failed to load image: {image_path}")
 
-                    blurred_img = blur_face(img)
+                    blurred_img = blur_faces(img)
 
                     if check_image_integrity(blurred_img, image_path):
                         cv2.imwrite(image_path, blurred_img) # If the image already exists, it will be overwritten
@@ -133,7 +130,7 @@ def rename_all_images(images_path, monuments):
 
     for num, monument in monuments.items():
         monument_path = os.path.join(images_path, f"{num}. {monument}")
-        rename_images(monument_path, monument, num)
+        rename_images(monument_path, monument)
         progress_bar.update(len(os.listdir(monument_path)))
 
     progress_bar.close()
@@ -142,6 +139,40 @@ def rename_all_images(images_path, monuments):
 def remove_all_metadata():
     # Implement metadata removal logic here
     pass
+
+
+def list_all_images(images_path, monuments, output_file):
+    """
+    List all images and save the data to a CSV file.
+
+    :param images_path: Path to the directory containing monument folders.
+    :param monuments: Dictionary of monument numbers and names.
+    :param output_file: Path to the output CSV file.
+    :return: None.
+    """
+    all_image_data = []
+    total_monuments = len(monuments)
+
+    # Create a progress bar for processing monuments
+    with tqdm(total=total_monuments, desc="Processing monuments", unit="monument") as pbar:
+        for num, monument in monuments.items():
+            monument_path = os.path.join(images_path, f"{num}. {monument}")
+
+            # Process the directory and update the progress bar
+            monument_data = process_directory(monument_path)
+            all_image_data.extend(monument_data)
+
+            pbar.update(1)
+            pbar.set_postfix({"Current": monument[:20]}, refresh=True)
+
+    # Sort by folder name and then by file name
+    #all_image_data = sorted(all_image_data, key=lambda x: (x['folder_name'], x['file_name']))
+    all_image_data = sorted(all_image_data, key=custom_sort_key)
+
+    create_csv(all_image_data, output_file)
+
+    print(f"\nProcessed {total_monuments} monuments. Data saved to {output_file}")
+
 
 
 def main():
@@ -171,9 +202,11 @@ def main():
     #blur_all_faces(images_path, monuments) # FIXME
 
     # debug # TODO: remove
+    '''
     test_image_path = os.path.join(images_path, '1. santamariadelfiore', 'florence_santamariadelfiore_0001.jpg')
     test_image = cv2.imread(test_image_path)
-    blurred_test_image = blur_face(test_image)
+    blurred_test_image = blur_faces(test_image)
+    '''
 
     # Rename all images
     #rename_all_images(images_path, monuments)
@@ -190,6 +223,10 @@ def main():
 
     # Remove metadata from all images
     #remove_all_metadata()
+
+    # List all images and save the data to a CSV file
+    output_file = os.path.join('../images', 'images.csv')
+    list_all_images(images_path, monuments, output_file)
 
 
 if __name__ == '__main__':

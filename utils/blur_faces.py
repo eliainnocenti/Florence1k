@@ -9,7 +9,7 @@ Functions:
 2. plot_images(img)
     Plot images using matplotlib.
 
-3. blur_face(image)
+3. blur_faces(image)
     Blur faces in an image using OpenCV's DNN face detector.
 
 Dependencies:
@@ -87,7 +87,7 @@ def plot_images(img):
     plt.show()
 
 
-def blur_face(image):
+def blur_faces(image):
     """
     Function to blur faces in an image using OpenCV's DNN face detector.
 

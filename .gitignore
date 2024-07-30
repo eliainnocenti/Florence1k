@@ -22,8 +22,6 @@ requirements.txt
 logs/
 
 # models
+utils/haarcascade_frontalface_alt.xml
 utils/opencv_face_detector_uint8.pb
 utils/opencv_face_detector.pbtxt
-
-# tmp
-scripts/tmp.py
