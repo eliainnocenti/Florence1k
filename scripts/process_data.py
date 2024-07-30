@@ -1,5 +1,5 @@
 """
-This script processes images for the Florence1k dataset, including face blurring, image renaming, and metadata removal.
+This script processes images for the Florence1k dataset, including face blurring, image renaming, and extra metadata removal.
 
 Functions:
 ----------
@@ -9,8 +9,8 @@ Functions:
 2. rename_all_images(images_path, monuments)
     Rename all images within the specified monuments.
 
-3. remove_all_metadata()
-    Remove metadata from all images.
+3. remove_all_extra_metadata(images_path, monuments)
+    Remove extra metadata from all images.
 
 4. list_all_images(images_path, monuments, output_file)
     List all images and save the data to a CSV file.
@@ -41,7 +41,7 @@ from tqdm import tqdm
 from utils.blur_faces import blur_faces
 from utils.rename_images import rename_images
 from utils.rename_images import check_directory
-from utils.remove_metadata import remove_metadata
+from utils.remove_extra_metadata import remove_extra_metadata
 from utils.list_images import process_directory
 from utils.list_images import create_csv
 from utils.list_images import custom_sort_key
@@ -136,9 +136,36 @@ def rename_all_images(images_path, monuments):
     progress_bar.close()
 
 
-def remove_all_metadata():
-    # Implement metadata removal logic here
-    pass
+def remove_all_extra_metadata(images_path, monuments): # TODO: check
+    """
+    Remove extra metadata from all images.
+
+    :param images_path: Path to the directory containing monument folders.
+    :param monuments: Dictionary of monument numbers and names.
+    :return: None.
+    """
+    total_images = sum(len([f for f in os.listdir(os.path.join(images_path, f"{num}. {name}"))
+                            if is_jpg(os.path.join(images_path, f"{num}. {name}", f))])
+                       for num, name in monuments.items())
+
+    with tqdm(total=total_images, desc="Removing Extra Metadata") as progress_bar:
+        for num, monument in monuments.items():
+            monument_path = os.path.join(images_path, f"{num}. {monument}")
+
+            for image in os.listdir(monument_path):
+                image_path = os.path.join(monument_path, image)
+
+                if not is_jpg(image_path):
+                    print(f"Skipping invalid image: {image_path}")
+                    continue
+
+                try:
+                    remove_extra_metadata(image_path)
+
+                except Exception as e:
+                    print(f"Error processing image at {image_path}: {str(e)}")
+
+                progress_bar.update(1)
 
 
 def list_all_images(images_path, monuments, output_file):
@@ -221,12 +248,12 @@ def main():
     check_all_directories_size(images_path, monuments)
     '''
 
-    # Remove metadata from all images
-    #remove_all_metadata()
+    # Remove extra metadata from all images
+    #remove_all_extra_metadata(images_path, monuments)
 
     # List all images and save the data to a CSV file
     output_file = os.path.join('../images', 'images.csv')
-    list_all_images(images_path, monuments, output_file)
+    #list_all_images(images_path, monuments, output_file)
 
 
 if __name__ == '__main__':
