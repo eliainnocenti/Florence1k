@@ -21,5 +21,9 @@ requirements.txt
 # logs
 logs/
 
+# models
+utils/opencv_face_detector_uint8.pb
+utils/opencv_face_detector.pbtxt
+
 # tmp
 scripts/tmp.py
