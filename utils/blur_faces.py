@@ -6,10 +6,7 @@ Functions:
 1. download_model_files(download_dir=".")
     Download the required model files for face detection.
 
-2. plot_images(img)
-    Plot images using matplotlib.
-
-3. blur_faces(image)
+2. blur_faces(image)
     Blur faces in an image using OpenCV's DNN face detector.
 
 Dependencies:
@@ -30,8 +27,8 @@ Elia Innocenti
 
 import os
 import cv2
-import matplotlib.pyplot as plt
 import urllib.request
+from utils.plot_images import plot_images
 
 
 def download_model_files(download_dir="."):
@@ -66,25 +63,6 @@ def download_model_files(download_dir="."):
             print(f"and place it in the current working directory: {os.getcwd()}")
 
     print("Download process completed.")
-
-
-def plot_images(img):
-    """
-    Function to plot images.
-
-    :param img: image to plot.
-    :return: None.
-    """
-    # Check if 'seaborn' style is available, otherwise use a default style
-    if 'seaborn' in plt.style.available:
-        plt.style.use('seaborn')
-    else:
-        # Use a default style, e.g., 'classic'
-        plt.style.use('classic')
-
-    plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
-    plt.axis('off')
-    plt.show()
 
 
 def blur_faces(image):
