@@ -112,10 +112,8 @@ def merge_all_json_annotations(annotations_path, output_folder, monuments):
 
 def split_train_val_test(monuments, train_percent=0.6, val_percent=0.3, test_percent=0.1, type='json'): # TODO: update signature
     """
-    # TODO: update docstring
+    TODO: update docstring
     """
-    # 60 - 30 - 10 split -> 720 - 360 - 120 -> after augmentation (suppose x4) -> 2880 - 360 - 120
-
     percent = train_percent + val_percent + test_percent
     if abs(1 - percent) > 0.000001:
         print("Error: Train, validation and test percentages must sum up to 1")

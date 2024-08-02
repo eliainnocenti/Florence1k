@@ -193,7 +193,6 @@ def list_all_images(images_path, monuments, output_file):
             pbar.set_postfix({"Current": monument[:20]}, refresh=True)
 
     # Sort by folder name and then by file name
-    #all_image_data = sorted(all_image_data, key=lambda x: (x['folder_name'], x['file_name']))
     all_image_data = sorted(all_image_data, key=custom_sort_key)
 
     create_csv(all_image_data, output_file)
