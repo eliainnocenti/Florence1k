@@ -49,6 +49,7 @@ download_path = "/Users/eliainnocenti/Downloads"
 
 def prepare_image(image_path, input_shape):
     """
+    Prepare an image for object detection.
 
     :param image_path:
     :param input_shape:
@@ -98,12 +99,6 @@ def test_images(images_path, monuments, confidence_thresholds, interpreter, inpu
     :param type: Type of images to test ('test_set' or 'personal_images')
     :return: None
     """
-
-    # Personal images
-    # image_path = os.path.join(download_path, 'IMG_4418.jpg')
-    # image_path = os.path.join(download_path, 'eiffel.jpg')
-    # image_path = os.path.join(download_path, 'IMG_5091.jpg')
-
     test_images = []
 
     if type == 'test_set':
@@ -115,7 +110,7 @@ def test_images(images_path, monuments, confidence_thresholds, interpreter, inpu
             monument_path = os.path.join(images_path, f"{num}. {monument}")
             monument_images = [img for img in test_set if img.startswith(f"florence_{monument}")]
 
-            if n_images_per_monument > 0:
+            if 0 < n_images_per_monument != len(monument_images):
                 monument_images = random.sample(monument_images, min(n_images_per_monument, len(monument_images)))
 
             for image_name in monument_images:
@@ -123,8 +118,13 @@ def test_images(images_path, monuments, confidence_thresholds, interpreter, inpu
                 test_images.append(image_path)
 
     elif type == 'personal_images':
-        print("Not implemented yet.")
-        return
+        test_images_path = os.path.join(download_path, 'test')
+        test_images.append(os.path.join(test_images_path, 'basilicasantacroce.jpg'))     # santacroce             # 0.7
+        test_images.append(os.path.join(test_images_path, 'eiffel.jpg'))                 # eiffel                 # 0.0
+        test_images.append(os.path.join(test_images_path, 'palazzovecchio.jpg'))         # palazzovecchio         # 0.6
+        test_images.append(os.path.join(test_images_path, 'santamariadelfiore.jpg'))     # santamariadelfiore     # 0.8
+        test_images.append(os.path.join(test_images_path, 'battisterosangiovanni.jpg'))  # battisterosangiovanni  # 0.8
+        test_images.append(os.path.join(test_images_path, 'campanilegiotto.jpg'))        # campanilegiotto        # 0.6
 
     else:
         print("Invalid input. Please try again.")
@@ -167,7 +167,7 @@ def test_images(images_path, monuments, confidence_thresholds, interpreter, inpu
 
         # Print results and draw boxes
         for i in top_indices:
-            # Convert normalized coordinates to pixel coordinates
+            # Convert normalized coordinates to pixel coordinates   # TODO: check if it's xmin, ymin, xmax, ymax or xmin, ymin, width, height
             xmin, ymin, b_width, b_height = filtered_boxes[i]       # xmin, ymin, xmax, ymax = filtered_boxes[i]
             xmin = int((xmin + 1) * width / 2)
             ymin = int((ymin + 1) * width / 2)
@@ -196,33 +196,44 @@ def main():
     :return: None.
     """
     monuments = {
-        "1": "santamariadelfiore",
-        "2": "battisterosangiovanni",
-        "3": "campanilegiotto",
-        "4": "galleriauffizi",
-        "5": "loggialanzi",
-        "6": "palazzovecchio",
-        "7": "pontevecchio",
-        "8": "basilicasantacroce",
-        "9": "palazzopitti",
-        "10": "piazzalemichelangelo",
-        "11": "basilicasantamarianovella",
-        "12": "basilicasanminiato"
+        #"1": "santamariadelfiore",
+        #"2": "battisterosangiovanni",
+        #"3": "campanilegiotto",
+        #"4": "galleriauffizi",
+        #"5": "loggialanzi",
+        #"6": "palazzovecchio",
+        #"7": "pontevecchio",
+        #"8": "basilicasantacroce",
+        #"9": "palazzopitti",
+        #"10": "piazzalemichelangelo",
+        #"11": "basilicasantamarianovella",
+        #"12": "basilicasanminiato"
     }
 
-    confidence_thresholds = { # TODO: update with the correct values
-        "1.": 0.5, "2.": 0.5, "3.": 0.0,  "4.": 0.0,  "5.": 0.0,  "6.": 0.0,
-        "7.": 0.0, "8.": 0.0, "9.": 0.0, "10.": 0.0, "11.": 0.0, "12.": 0.0
+    confidence_thresholds = { # TODO: check values
+        "1.": 0.5,
+        "2.": 0.7,
+        "3.": 0.6,
+        "4.": 0.6,
+        "5.": 0.6,
+        "6.": 0.5,
+        "7.": 0.5,
+        "8.": 0.6,
+        "9.": 0.6,
+        "10.": 0.6,
+        "11.": 0.6,
+        "12.": 0.6
     }
 
     images_path = os.path.join(florence1k_path, 'images')
 
     # Load the TFLite model
-    model = input("Which model do you want to use? (model.tflite/model_fp16.tflite): ")
+    #model = input("Which model do you want to use? (model.tflite/model_fp16.tflite): ")
+    model = "model.tflite"
     if model == 'model.tflite':
-        interpreter = tf.lite.Interpreter(model_path="../models/1/model.tflite")
+        interpreter = tf.lite.Interpreter(model_path="../models/4/model.tflite")
     elif model == 'model_fp16.tflite':
-        interpreter = tf.lite.Interpreter(model_path="../models/1/model_fp16.tflite")
+        interpreter = tf.lite.Interpreter(model_path="../models/4/model_fp16.tflite")
     else:
         print("Invalid input. Please try again.")
         return
@@ -233,14 +244,16 @@ def main():
     input_details = interpreter.get_input_details()
     output_details = interpreter.get_output_details()
 
-    type = input("Test set or personal images? (test_set/personal_images): ")
+    #type = input("Test set or personal images? (test_set/personal_images): ")
+    type = 'personal_images'
     if type == 'test_set':
-        number = input("Number of images per monument: ")
+        #number = input("Number of images per monument: ")
+        number = 10
         test_images(images_path, monuments, confidence_thresholds=confidence_thresholds,
                     interpreter=interpreter, input_details=input_details, output_details=output_details,
                     n_images_per_monument=int(number), max_boxes=10, type='test_set')
     elif type == 'personal_images':
-        confidence_thresholds = {"0": 0.5} # TODO: update
+        confidence_thresholds = {"0": 0.6} # TODO: check value
         test_images(download_path, monuments, confidence_thresholds=confidence_thresholds,
                     interpreter=interpreter, input_details=input_details, output_details=output_details,
                     max_boxes=10, type='personal_images')
