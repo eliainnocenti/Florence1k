@@ -1,12 +1,15 @@
 # Florence 1k
 
-This repository contains Florence 1k, a novel dataset for monument recognition in Florence, Italy. The dataset is designed for both object detection and image retrieval tasks, featuring:
+This repository contains Florence 1k, a novel dataset for monument recognition 
+in Florence, Italy. The dataset is designed for both object detection and image 
+retrieval tasks, featuring:
 
 - XML annotations in PASCAL VOC format for object detection
 - JSON annotations in COCO format for object detection
 - a .pkl file for image retrieval
 
-Florence 1k aims to facilitate research and development in computer vision applications focused on cultural heritage and urban landmarks.
+Florence 1k aims to facilitate research and development in computer vision 
+applications focused on cultural heritage and urban landmarks.
 
 ## Overview
 
@@ -15,8 +18,8 @@ Florence 1k aims to facilitate research and development in computer vision appli
 - Actual number of images: `1200`
 - Number of monuments: `12`
 - Average images per monument: `100`
-- Image resolution: Varies, with a minimum dimension of 800 pixels <!-- TODO: check -->
-- Average annotations per image: `1.5` (object detection) <!-- TODO: check -->
+- Image resolution: Varies, with a minimum dimension of `50000` pixels (width x height)
+- Average annotations per image: `1.49` (object detection)
 
 ### Monument Classes
 
@@ -141,7 +144,7 @@ To train an object detection model using the Florence 1k dataset,
 we recommend using the MediaPipe Model Maker library on Google Colab.
 You can find an example script in the `training` folder or use the following Colab notebook:
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/) <!-- TODO: add link -->
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/eliainnocenti/Florence1k/blob/master/training/mp_training_florence1k.ipynb)
 
 In the notebook, you can train a MobileNet SSD model using the Florence 1k dataset.
 
@@ -177,7 +180,7 @@ model = object_detector.ObjectDetector.create(
 )
 ```
 
-For more details, please refer to the MediaPipe Model Maker documentation. <!-- TODO: add link -->
+For more details, please refer to the [MediaPipe Model Maker documentation](https://ai.google.dev/edge/mediapipe/solutions/customization/object_detector).
 
 ### Results
 
@@ -189,11 +192,12 @@ We evaluated our model using two different batch sizes (`32` and `64`) to assess
 
 ##### Batch Size 32
 
+<!-- TODO: make prettier -->
+
 - **Validation Loss**: 0.7339
   - Classification Loss: 0.3791
   - Bounding Box Loss: 0.0031
   - Total Model Loss: 0.5348
-
 
 - **COCO Metrics**:
   - Average Precision (AP) @ IoU=0.50:0.95 | all areas: 0.485
@@ -208,6 +212,8 @@ We evaluated our model using two different batch sizes (`32` and `64`) to assess
   - Average Recall (AR) @ IoU=0.50:0.95 | large areas: 0.631
 
 ##### Batch Size 64
+
+<!-- TODO: make prettier -->
 
 - **Validation Loss**: 0.7227
   - Classification Loss: 0.3724

@@ -14,7 +14,7 @@ Italy, captured by tourists and locals alike.
 
 - All images are in JPEG format
 - Images are in RGB color space
-- Resolution varies, but all images have a minimum dimension of 800 pixels <!-- TODO: check -->
+- Resolution varies, but all images have a minimum dimension of `50000` pixels (width x height)
 
 ### Content
 

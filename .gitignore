@@ -16,6 +16,7 @@ __pycache__/
 TODO.txt
 LICENSE.txt
 CONTRIBUTING.md
+scripts/tmp.py
 
 # logs
 logs/
