@@ -251,7 +251,7 @@ These results demonstrate that our model is effective at recognizing and localiz
 
 To better illustrate our model's performance, we've created a bar chart comparing Average Precision (AP) and Average Recall (AR) across different IoU thresholds and object sizes:
 
-![Florence 1k Results Chart](path/to/your/chart_image.png) <!-- TODO: create the chart -->
+![Florence 1k Results Chart](utils/results_chart.png)
 
 This chart clearly illustrates the model's performance across different metrics and object sizes, 
 highlighting its strengths in detecting large objects and areas for improvement with medium-sized objects.
