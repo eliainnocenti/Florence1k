@@ -17,6 +17,8 @@ TODO.txt
 LICENSE.txt
 CONTRIBUTING.md
 scripts/tmp.py
+tmp
+utils/augmentations.py
 
 # logs
 logs/

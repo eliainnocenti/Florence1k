@@ -91,6 +91,14 @@ python download_dataset.py
 
 This script will download all images and annotations, organizing them in the structure described above.
 
+## Usage Rights
+
+While these images are sourced from public uploads, it's important to note:
+
+1. The images are used here for research and educational purposes under fair use.
+2. If you plan to use this dataset for commercial purposes, you should seek appropriate permissions.
+3. We do not claim ownership of these images. All rights belong to their respective owners.
+
 ## Object Detection
 
 For object detection tasks, we provide annotations in both PASCAL VOC and COCO formats. \

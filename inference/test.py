@@ -47,6 +47,20 @@ florence1k_path = os.path.join(base_path, 'datasets', 'florence1k')
 download_path = "/Users/eliainnocenti/Downloads"
 
 
+def get_monument_number(monument_name, monuments):
+    """
+    Get the number of a monument given its name.
+
+    :param monument_name:
+    :param monuments:
+    :return:
+    """
+    for num, name in monuments.items():
+        if name == monument_name:
+            return num
+    return None
+
+
 def prepare_image(image_path, input_shape):
     """
     Prepare an image for object detection.
@@ -119,12 +133,15 @@ def test_images(images_path, monuments, confidence_thresholds, interpreter, inpu
 
     elif type == 'personal_images':
         test_images_path = os.path.join(download_path, 'test')
-        test_images.append(os.path.join(test_images_path, 'basilicasantacroce.jpg'))     # santacroce             # 0.7
+        test_images.append(os.path.join(test_images_path, 'basilicasantacroce.jpg'))     # santacroce             # 0.8
         test_images.append(os.path.join(test_images_path, 'eiffel.jpg'))                 # eiffel                 # 0.0
-        test_images.append(os.path.join(test_images_path, 'palazzovecchio.jpg'))         # palazzovecchio         # 0.6
+        test_images.append(os.path.join(test_images_path, 'palazzovecchio.jpg'))         # palazzovecchio         # 0.7
         test_images.append(os.path.join(test_images_path, 'santamariadelfiore.jpg'))     # santamariadelfiore     # 0.8
-        test_images.append(os.path.join(test_images_path, 'battisterosangiovanni.jpg'))  # battisterosangiovanni  # 0.8
-        test_images.append(os.path.join(test_images_path, 'campanilegiotto.jpg'))        # campanilegiotto        # 0.6
+        test_images.append(os.path.join(test_images_path, 'battisterosangiovanni.jpg'))  # battisterosangiovanni  # 0.9
+        test_images.append(os.path.join(test_images_path, 'campanilegiotto.jpg'))        # campanilegiotto        # 0.8
+
+    elif type == 'test_image':
+        test_images.append(images_path)
 
     else:
         print("Invalid input. Please try again.")
@@ -146,6 +163,13 @@ def test_images(images_path, monuments, confidence_thresholds, interpreter, inpu
             confidence_threshold = confidence_thresholds[monument_num]
         elif type == 'personal_images':
             confidence_threshold = confidence_thresholds["0"]
+        elif type == 'test_image':
+            monument_num = image_path.split('/')[-2].split(' ')[0]
+            confidence_threshold = confidence_thresholds[monument_num]
+
+        filtered_confidences = []
+        filtered_class_ids = []
+        bboxes = []
 
         # Filter based on confidence threshold
         mask = confidences > confidence_threshold
@@ -160,8 +184,6 @@ def test_images(images_path, monuments, confidence_thresholds, interpreter, inpu
         # Load the original image
         original_image = cv2.imread(image_path)
         height, width = original_image.shape[:2]
-
-        bboxes = []
 
         print(f"Processing image: {image_path}")
 
@@ -182,7 +204,7 @@ def test_images(images_path, monuments, confidence_thresholds, interpreter, inpu
 
             bboxes.append([xmin, ymin, b_width, b_height])
 
-        #plot_bounding_boxes(original_image, bboxes, filtered_confidences, filtered_class_ids)
+        #plot_bounding_boxes(image_path, bboxes, filtered_confidences, filtered_class_ids)
 
         # Save the image with bounding boxes
         # cv2.imwrite('output_image.jpg', original_image)
@@ -196,18 +218,18 @@ def main():
     :return: None.
     """
     monuments = {
-        #"1": "santamariadelfiore",
-        #"2": "battisterosangiovanni",
-        #"3": "campanilegiotto",
-        #"4": "galleriauffizi",
-        #"5": "loggialanzi",
-        #"6": "palazzovecchio",
-        #"7": "pontevecchio",
-        #"8": "basilicasantacroce",
-        #"9": "palazzopitti",
-        #"10": "piazzalemichelangelo",
-        #"11": "basilicasantamarianovella",
-        #"12": "basilicasanminiato"
+        "1": "santamariadelfiore",
+        "2": "battisterosangiovanni",
+        "3": "campanilegiotto",
+        "4": "galleriauffizi",
+        "5": "loggialanzi",
+        "6": "palazzovecchio",
+        "7": "pontevecchio",
+        "8": "basilicasantacroce",
+        "9": "palazzopitti",
+        "10": "piazzalemichelangelo",
+        "11": "basilicasantamarianovella",
+        "12": "basilicasanminiato"
     }
 
     confidence_thresholds = { # TODO: check values
@@ -217,7 +239,7 @@ def main():
         "4.": 0.6,
         "5.": 0.6,
         "6.": 0.5,
-        "7.": 0.5,
+        "7.": 0.6,
         "8.": 0.6,
         "9.": 0.6,
         "10.": 0.6,
@@ -231,9 +253,9 @@ def main():
     #model = input("Which model do you want to use? (model.tflite/model_fp16.tflite): ")
     model = "model.tflite"
     if model == 'model.tflite':
-        interpreter = tf.lite.Interpreter(model_path="../models/4/model.tflite")
+        interpreter = tf.lite.Interpreter(model_path="../models/5/model.tflite")
     elif model == 'model_fp16.tflite':
-        interpreter = tf.lite.Interpreter(model_path="../models/4/model_fp16.tflite")
+        interpreter = tf.lite.Interpreter(model_path="../models/5/model_fp16.tflite")
     else:
         print("Invalid input. Please try again.")
         return
@@ -253,10 +275,21 @@ def main():
                     interpreter=interpreter, input_details=input_details, output_details=output_details,
                     n_images_per_monument=int(number), max_boxes=10, type='test_set')
     elif type == 'personal_images':
-        confidence_thresholds = {"0": 0.6} # TODO: check value
+        confidence_thresholds = {"0": 0.7} # TODO: check value
         test_images(download_path, monuments, confidence_thresholds=confidence_thresholds,
                     interpreter=interpreter, input_details=input_details, output_details=output_details,
                     max_boxes=10, type='personal_images')
+    elif type == 'test_image':
+        monument_name = input("Monument name: ")
+        image_num = input("Image number: ")
+        monument_num = get_monument_number(monument_name, monuments)
+        formatted_image_num = f"{int(image_num):04d}"
+        image_path = os.path.join(images_path, f"{monument_num}. {monument_name}",
+                                  f"florence_{monument_name}_{formatted_image_num}.jpg")
+        print(f"Image path: {image_path}")
+        test_images(image_path, monuments, confidence_thresholds=confidence_thresholds,
+                    interpreter=interpreter, input_details=input_details, output_details=output_details,
+                    max_boxes=10, type='test_image')
     else:
         print("Invalid input. Please try again.")
         return
