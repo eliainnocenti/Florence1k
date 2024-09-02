@@ -72,7 +72,7 @@ def prepare_image(image_path, input_shape):
     img = cv2.imread(image_path)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     img = cv2.resize(img, (input_shape[1], input_shape[2]))
-    img = img / 255.0  # Normalize # TODO: do I have to normalize?
+    img = img / 255.0  # Normalize
     img = np.expand_dims(img, axis=0)
     return img.astype(np.float32)
 
@@ -204,7 +204,7 @@ def test_images(images_path, monuments, confidence_thresholds, interpreter, inpu
 
             bboxes.append([xmin, ymin, b_width, b_height])
 
-        #plot_bounding_boxes(image_path, bboxes, filtered_confidences, filtered_class_ids)
+        plot_bounding_boxes(image_path, bboxes, filtered_confidences, filtered_class_ids)
 
         # Save the image with bounding boxes
         # cv2.imwrite('output_image.jpg', original_image)

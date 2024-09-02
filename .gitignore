@@ -27,4 +27,8 @@ logs/
 utils/haarcascade_frontalface_alt.xml
 utils/opencv_face_detector_uint8.pb
 utils/opencv_face_detector.pbtxt
-models/
+models/1/
+models/2/
+models/3/
+models/4/
+models/5/
